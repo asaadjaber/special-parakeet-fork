@@ -24,14 +24,9 @@ struct BirdsListView: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(birds) { bird in
-                Button(action: {
-                    bird.isFlipped.toggle()
-                }, label: {
-                    Text(bird.name)
-                })
-            }.buttonStyle(.borderedProminent)
-                .lineLimit(1)
-        }
+                BirdStackView(bird: bird)
+            }
+        }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
     }
 }
 
