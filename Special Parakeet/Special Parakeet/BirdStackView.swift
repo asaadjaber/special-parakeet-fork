@@ -29,6 +29,7 @@ struct BirdStackView: View {
                 Text(bird.name)
             }).buttonStyle(.borderedProminent)
                 .lineLimit(1)
+                .accessibilityIdentifier("birdButton")
         }
     }
     
