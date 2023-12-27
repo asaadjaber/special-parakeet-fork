@@ -18,6 +18,7 @@
 		4EDB4A7D2B04E50D0041D060 /* Special_ParakeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7C2B04E50D0041D060 /* Special_ParakeetUITests.swift */; };
 		4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */; };
 		4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */; };
+		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4EDB4A7C2B04E50D0041D060 /* Special_ParakeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITests.swift; sourceTree = "<group>"; };
 		4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
+		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4EDB4A632B04E50C0041D060 /* ContentView.swift */,
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
 				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
+				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
 				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
 				4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 				4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */,
 				4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */,
 				4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */,
+				4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */,
 				4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */,
 				4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */,
 			);
