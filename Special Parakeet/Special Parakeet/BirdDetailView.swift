@@ -9,11 +9,13 @@ import Foundation
 import SwiftUI
 
 struct BirdDetailView: View {
+    let bird: Bird!
+    
     var body: some View {
         List {
             Section(content: {
                 VStack(alignment: .leading) {
-                    Text("Bird Name")
+                    Text(bird.name)
                     Text("Bird Family")
                     Text("Description")
                     Text("Lorem ipsum")
@@ -30,5 +32,5 @@ struct BirdDetailView: View {
 }
 
 #Preview {
-    BirdDetailView()
+    BirdDetailView(bird: Bird(name: "Sparrow", isFlipped: false))
 }

@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct BirdsListView: View {
+    @Binding var presentedBirds: [Bird]
+    
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
 
     var birds = [
@@ -24,12 +26,15 @@ struct BirdsListView: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(birds) { bird in
-                BirdStackView(bird: bird)
+                BirdStackView(bird: bird, presentedBirds: $presentedBirds)
             }
         }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
+        .navigationDestination(for: Bird.self) { bird in
+            BirdDetailView(bird: bird)
+        }
     }
 }
 
 #Preview {
-    BirdsListView()
+    BirdsListView(presentedBirds: Binding(projectedValue: .constant([])))
 }

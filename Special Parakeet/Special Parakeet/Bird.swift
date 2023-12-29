@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class Bird: ObservableObject, Identifiable {
-    
     let name: String
     
     @Published var isFlipped: Bool = false
@@ -22,4 +21,14 @@ class Bird: ObservableObject, Identifiable {
             self.isFlipped = isFlipped
         }
     }
+}
+
+extension Bird: Hashable {
+    static func == (lhs: Bird, rhs: Bird) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+         hasher.combine(name)
+     }
 }

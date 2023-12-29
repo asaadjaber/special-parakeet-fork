@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var presentedBirds: [Bird] = []
+    
     var body: some View {
-        BirdsListView()
+        NavigationStack(path: $presentedBirds) {
+            BirdsListView(presentedBirds: $presentedBirds)
+        }
     }
 }
 
