@@ -19,6 +19,7 @@
 		4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */; };
 		4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */; };
 		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
+		4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
 		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
+		4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BirdDetailViewUITests.swift; path = "Special ParakeetUITests/BirdDetailViewUITests.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				4EDB4A7C2B04E50D0041D060 /* Special_ParakeetUITests.swift */,
+				4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */,
 				4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */,
 			);
 			path = "Special ParakeetUITests";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EDB4A7D2B04E50D0041D060 /* Special_ParakeetUITests.swift in Sources */,
+				4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */,
 				4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

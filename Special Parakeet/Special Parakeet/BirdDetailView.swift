@@ -15,7 +15,7 @@ struct BirdDetailView: View {
         List {
             Section(content: {
                 VStack(alignment: .leading) {
-                    Text(bird.name)
+                    Text(bird.name).accessibilityIdentifier("birdDetailViewBirdNameText")
                     Text("Bird Family")
                     Text("Description")
                     Text("Lorem ipsum")
