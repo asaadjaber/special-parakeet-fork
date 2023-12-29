@@ -22,9 +22,10 @@ final class Special_ParakeetUITests: XCTestCase {
 
     func testBirdButtonLabelString() {
         let birdName = "Sparrow"
-        
-        let button = app.descendants(matching: .button).children(matching: .button)
-            .matching(identifier: "birdButton")
+                
+        let button = app.descendants(matching: .any)
+            .children(matching: .button)
+            .matching(.button, identifier: birdName)
             .firstMatch
 
         XCTAssertEqual(birdName, button.label)
