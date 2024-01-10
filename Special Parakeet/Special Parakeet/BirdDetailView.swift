@@ -35,14 +35,15 @@ struct BirdDetailView: View {
                         }
                     }
                     Text("Bird Family")
-                    Text("Description")
-                    Text("Lorem ipsum")
                 }
             }, header: {
                 Image(systemName: "camera.macro")
                     .resizable()
                     .aspectRatio(1.67, contentMode: .fit)
             })
+            Section("Description") {
+                Text("Lorem ipsum")
+            }
         }
         .listRowSeparator(.hidden, edges: .all)
         .listStyle(.plain)
