@@ -14,13 +14,13 @@ struct BirdsListView: View {
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
 
     var birds = [
-        Bird(name: "Accipiter", isFlipped: false),
-        Bird(name: "Eagle", isFlipped: false),
-        Bird(name: "Sparrow", isFlipped: false),
-        Bird(name: "Pigeon", isFlipped: false),
-        Bird(name: "Crow", isFlipped: false),
-        Bird(name: "BlueJay", isFlipped: false),
-        Bird(name: "Woodpecker", isFlipped: false)
+        Bird(name: "Accipiter", family: "Some", isFavorited: false),
+        Bird(name: "Eagle", family: "Some", isFavorited: false),
+        Bird(name: "Tree Sparrow", family: "Some", isFavorited: false),
+        Bird(name: "Pigeon", family: "Some", isFavorited: false),
+        Bird(name: "Crow", family: "Some", isFavorited: false),
+        Bird(name: "BlueJay", family: "Some", isFavorited: false),
+        Bird(name: "Woodpecker", family: "some", isFavorited: false)
     ]
     
     var body: some View {

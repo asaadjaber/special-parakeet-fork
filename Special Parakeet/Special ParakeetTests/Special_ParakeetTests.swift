@@ -16,10 +16,10 @@ final class Special_ParakeetTests: XCTestCase {
 
     func testBirdInitiliazer() {
         let birdName = "Sparrow"
-        let isFlipped = false
-        let bird = Bird(name: birdName, isFlipped: isFlipped)
+        let isFavorited = false
+        let bird = Bird(name: birdName, isFavorited: isFavorited)
         
         XCTAssertEqual(bird.name, birdName)
-        XCTAssertEqual(bird.isFlipped, isFlipped)
+        XCTAssertEqual(bird.isFavorited, isFavorited)
     }
 }

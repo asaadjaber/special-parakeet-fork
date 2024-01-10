@@ -9,13 +9,31 @@ import Foundation
 import SwiftUI
 
 struct BirdDetailView: View {
-    let bird: Bird!
+    @ObservedObject var bird: Bird
     
     var body: some View {
         List {
             Section(content: {
                 VStack(alignment: .leading) {
-                    Text(bird.name).accessibilityIdentifier("birdDetailViewBirdNameText")
+                    HStack {
+                        if bird.isFavorited {
+                            Button(action: birdAction, label: {
+                                Text(bird.name)
+                                    .fontWeight(.black)
+                                    .font(.title2)
+                            }).buttonStyle(.borderedProminent)
+                                .controlSize(.large)
+                                .accessibilityIdentifier("birdDetailViewBirdNameText")
+                        } else {
+                            Button(action: birdAction, label: {
+                                Text(bird.name)
+                                    .fontWeight(.heavy)
+                                    .font(.title2)
+                            }).buttonStyle(.bordered)
+                                .controlSize(.large)
+                                .accessibilityIdentifier("birdDetailViewBirdNameText")
+                        }
+                    }
                     Text("Bird Family")
                     Text("Description")
                     Text("Lorem ipsum")
@@ -29,8 +47,12 @@ struct BirdDetailView: View {
         .listRowSeparator(.hidden, edges: .all)
         .listStyle(.plain)
     }
+        
+    func birdAction() {
+        bird.isFavorited.toggle()
+    }
 }
 
 #Preview {
-    BirdDetailView(bird: Bird(name: "Sparrow", isFlipped: false))
+    BirdDetailView(bird: Bird(name: "Sparrow", family: "Some", isFavorited: true))
 }
