@@ -16,25 +16,11 @@ struct BirdDetailView: View {
             Section(content: {
                 VStack(alignment: .leading) {
                     HStack {
-                        if bird.isFavorited {
-                            Button(action: birdAction, label: {
-                                Text(bird.name)
-                                    .fontWeight(.black)
-                                    .font(.title2)
-                            }).buttonStyle(.borderedProminent)
-                                .controlSize(.large)
-                                .accessibilityIdentifier("birdDetailViewBirdNameText")
-                        } else {
-                            Button(action: birdAction, label: {
-                                Text(bird.name)
-                                    .fontWeight(.heavy)
-                                    .font(.title2)
-                            }).buttonStyle(.bordered)
-                                .controlSize(.large)
-                                .accessibilityIdentifier("birdDetailViewBirdNameText")
-                        }
+                        BirdDetailFavoriteButtonView(bird: bird)
                     }
                     Text("Bird Family")
+                        .fontWeight(.heavy)
+                        .foregroundStyle(.gray)
                 }
             }, header: {
                 Image(systemName: "camera.macro")
@@ -47,10 +33,6 @@ struct BirdDetailView: View {
         }
         .listRowSeparator(.hidden, edges: .all)
         .listStyle(.plain)
-    }
-        
-    func birdAction() {
-        bird.isFavorited.toggle()
     }
 }
 

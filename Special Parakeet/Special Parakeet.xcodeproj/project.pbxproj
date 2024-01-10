@@ -10,6 +10,7 @@
 		4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */; };
 		4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */; };
 		4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFF2B31C74600BBAA42 /* Bird.swift */; };
+		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
 		4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */; };
 		4EDB4A642B04E50C0041D060 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A632B04E50C0041D060 /* ContentView.swift */; };
 		4EDB4A662B04E50D0041D060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB4A652B04E50D0041D060 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdStackView.swift; sourceTree = "<group>"; };
 		4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListView.swift; sourceTree = "<group>"; };
 		4E2EDFFF2B31C74600BBAA42 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EDB4A5E2B04E50C0041D060 /* Special Parakeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Special Parakeet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetApp.swift; sourceTree = "<group>"; };
 		4EDB4A632B04E50C0041D060 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
 				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
 				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
+				4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */,
 				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
 				4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */,
 				4EDB4A642B04E50C0041D060 /* ContentView.swift in Sources */,
 				4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */,
 				4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */,
