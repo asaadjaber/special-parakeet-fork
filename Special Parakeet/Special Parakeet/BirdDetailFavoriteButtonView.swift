@@ -14,20 +14,20 @@ struct BirdDetailFavoriteButtonView: View {
     var body: some View {
         Label(
             title: { Text(isFavorited.bird.name) },
-            icon: { Button(action: toggleFavorite, label: {
-                Image(systemName: isFavorited.isFavorited ? "heart.circle.fill" : "heart.circle")
-            }) }
-        ).font(.title)
+            icon: {
+                Button {
+                    withAnimation {
+                        isFavorited.isFavorited.toggle()
+                    }
+                } label: {
+                    Image(systemName: isFavorited.isFavorited ? "heart.circle.fill" : "heart.circle")
+                }}).font(.title)
             .fontWeight(.heavy)
-    }
-    
-    func toggleFavorite() {
-        isFavorited.isFavorited.toggle()
     }
 }
 
 #Preview {
-    BirdDetailFavoriteButtonView(isFavorited: IsFavorited(name: "Sparrow", 
+    BirdDetailFavoriteButtonView(isFavorited: IsFavorited(name: "Sparrow",
                                                           family: "Some",
                                                           isFavorited: true))
 }
