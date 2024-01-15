@@ -9,35 +9,25 @@ import Foundation
 import SwiftUI
 
 struct BirdDetailFavoriteButtonView: View {
-    @ObservedObject var bird: Bird
+    @ObservedObject var isFavorited: IsFavorited
     
     var body: some View {
-        HStack {
-            if bird.isFavorited {
-                Button(action: birdAction, label: {
-                    Text(bird.name)
-                        .fontWeight(.black)
-                        .font(.title2)
-                }).buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .accessibilityIdentifier("birdDetailViewBirdNameText")
-            } else {
-                Button(action: birdAction, label: {
-                    Text(bird.name)
-                        .fontWeight(.heavy)
-                        .font(.title2)
-                }).buttonStyle(.bordered)
-                    .controlSize(.large)
-                    .accessibilityIdentifier("birdDetailViewBirdNameText")
-            }
-        }
+        Label(
+            title: { Text(isFavorited.bird.name) },
+            icon: { Button(action: toggleFavorite, label: {
+                Image(systemName: isFavorited.isFavorited ? "heart.circle.fill" : "heart.circle")
+            }) }
+        ).font(.title)
+            .fontWeight(.heavy)
     }
     
-    func birdAction() {
-        bird.isFavorited.toggle()
+    func toggleFavorite() {
+        isFavorited.isFavorited.toggle()
     }
 }
 
 #Preview {
-    BirdDetailFavoriteButtonView(bird: Bird(name: "Sparrow", family: "Some", isFavorited: false))
+    BirdDetailFavoriteButtonView(isFavorited: IsFavorited(name: "Sparrow", 
+                                                          family: "Some",
+                                                          isFavorited: true))
 }

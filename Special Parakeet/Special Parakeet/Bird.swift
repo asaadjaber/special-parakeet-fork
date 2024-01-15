@@ -8,21 +8,10 @@
 import Foundation
 import SwiftUI
 
-class Bird: ObservableObject, Identifiable {
+struct Bird: Identifiable {
     let name: String
     let family: String
-    
-    @Published var isFavorited: Bool = false
-    
     var id: String { name }
-    
-    init(name: String, family: String, isFavorited: Bool?) {
-        self.name = name
-        self.family = family
-        if let isFavorited {
-            self.isFavorited = isFavorited
-        }
-    }
 }
 
 extension Bird: Hashable {

@@ -9,15 +9,13 @@ import Foundation
 import SwiftUI
 
 struct BirdDetailView: View {
-    @ObservedObject var bird: Bird
+    @StateObject var isFavorited: IsFavorited
     
     var body: some View {
         List {
             Section(content: {
+                BirdDetailFavoriteButtonView(isFavorited: isFavorited)
                 VStack(alignment: .leading) {
-                    HStack {
-                        BirdDetailFavoriteButtonView(bird: bird)
-                    }
                     Text("Bird Family")
                         .fontWeight(.heavy)
                         .foregroundStyle(.gray)
@@ -37,5 +35,5 @@ struct BirdDetailView: View {
 }
 
 #Preview {
-    BirdDetailView(bird: Bird(name: "Sparrow", family: "Some", isFavorited: true))
+    BirdDetailView(isFavorited: IsFavorited(name: "Sparrow", family: "Some", isFavorited: true))
 }

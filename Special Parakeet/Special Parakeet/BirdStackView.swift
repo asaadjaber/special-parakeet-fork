@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct BirdStackView: View {
-    @ObservedObject var bird: Bird
+    var bird: Bird
     @Binding var presentedBirds: [Bird]
     
     var body: some View {
@@ -26,7 +26,6 @@ struct BirdStackView: View {
                 .frame(width: 100, height: 100)
             Button(action: {
                 presentedBirds.append(bird)
-                bird.isFavorited.toggle()
             }, label: {
                 Text(bird.name)
             }).buttonStyle(.borderedProminent)
@@ -41,5 +40,6 @@ struct BirdStackView: View {
 }
 
 #Preview {
-    BirdStackView(bird: Bird(name: "Sparrow", family: "Some", isFavorited: true), presentedBirds: Binding(projectedValue: .constant([])))
+    BirdStackView(bird: Bird(name: "Sparrow", family: "Some"),
+                  presentedBirds: Binding(projectedValue: .constant([])))
 }
