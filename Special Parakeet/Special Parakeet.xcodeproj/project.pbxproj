@@ -10,6 +10,7 @@
 		4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */; };
 		4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */; };
 		4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFF2B31C74600BBAA42 /* Bird.swift */; };
+		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
 		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
 		4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE46552B516DA70003DC69 /* FavoritesStore.swift */; };
 		4EBFEDA12B557595005FE353 /* IsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFEDA02B557595005FE353 /* IsFavorited.swift */; };
@@ -23,6 +24,7 @@
 		4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */; };
 		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
 		4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */; };
+		D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01BB93D602086E776B2EE8BD /* Pods-Special Parakeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Special Parakeet.release.xcconfig"; path = "Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet.release.xcconfig"; sourceTree = "<group>"; };
 		4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdStackView.swift; sourceTree = "<group>"; };
 		4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListView.swift; sourceTree = "<group>"; };
 		4E2EDFFF2B31C74600BBAA42 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EBE46552B516DA70003DC69 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		4EBFEDA02B557595005FE353 /* IsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavorited.swift; sourceTree = "<group>"; };
@@ -62,6 +67,8 @@
 		4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
 		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
 		4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BirdDetailViewUITests.swift; path = "Special ParakeetUITests/BirdDetailViewUITests.swift"; sourceTree = SOURCE_ROOT; };
+		6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Special_Parakeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E59664EB062151D5966BB6CD /* Pods-Special Parakeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Special Parakeet.debug.xcconfig"; path = "Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,13 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E63894FE4FDD1AEBC43053E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EDB4A552B04E50C0041D060 = {
 			isa = PBXGroup;
 			children = (
 				4EDB4A602B04E50C0041D060 /* Special Parakeet */,
+				4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */,
 				4EDB4A712B04E50D0041D060 /* Special ParakeetTests */,
 				4EDB4A7B2B04E50D0041D060 /* Special ParakeetUITests */,
 				4EDB4A5F2B04E50C0041D060 /* Products */,
+				7CDB2BE9BC60435FF07102A0 /* Pods */,
+				4E63894FE4FDD1AEBC43053E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +131,7 @@
 		4EDB4A602B04E50C0041D060 /* Special Parakeet */ = {
 			isa = PBXGroup;
 			children = (
+				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
 				4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */,
 				4EDB4A632B04E50C0041D060 /* ContentView.swift */,
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
@@ -154,6 +174,15 @@
 			path = "Special ParakeetUITests";
 			sourceTree = "<group>";
 		};
+		7CDB2BE9BC60435FF07102A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E59664EB062151D5966BB6CD /* Pods-Special Parakeet.debug.xcconfig */,
+				01BB93D602086E776B2EE8BD /* Pods-Special Parakeet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EDB4A822B04E50D0041D060 /* Build configuration list for PBXNativeTarget "Special Parakeet" */;
 			buildPhases = (
+				A43BE79CAE8CC680DFF87283 /* [CP] Check Pods Manifest.lock */,
 				4EDB4A5A2B04E50C0041D060 /* Sources */,
 				4EDB4A5B2B04E50C0041D060 /* Frameworks */,
 				4EDB4A5C2B04E50C0041D060 /* Resources */,
+				17A5EC25C3C71E9B19A8115D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +291,7 @@
 			files = (
 				4EDB4A692B04E50D0041D060 /* Preview Assets.xcassets in Resources */,
 				4EDB4A662B04E50D0041D060 /* Assets.xcassets in Resources */,
+				4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +310,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17A5EC25C3C71E9B19A8115D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A43BE79CAE8CC680DFF87283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Special Parakeet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4EDB4A5A2B04E50C0041D060 /* Sources */ = {
@@ -452,7 +526,9 @@
 		};
 		4EDB4A832B04E50D0041D060 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59664EB062151D5966BB6CD /* Pods-Special Parakeet.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,7 +536,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Special Parakeet/Preview Content\"";
 				DEVELOPMENT_TEAM = X5QPQ583EG;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Special-Parakeet-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,7 +560,9 @@
 		};
 		4EDB4A842B04E50D0041D060 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01BB93D602086E776B2EE8BD /* Pods-Special Parakeet.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,7 +570,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Special Parakeet/Preview Content\"";
 				DEVELOPMENT_TEAM = X5QPQ583EG;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Special-Parakeet-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
