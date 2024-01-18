@@ -1,0 +1,7 @@
+platform :ios, '16.0'
+
+target 'Special Parakeet' do
+   pod 'FirebaseFirestore'
+end
+
+use_frameworks! :linkage => :dynamic
