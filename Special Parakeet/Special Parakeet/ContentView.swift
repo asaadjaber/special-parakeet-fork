@@ -12,7 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $presentedBirds) {
-            BirdsListView(presentedBirds: $presentedBirds)
+            TabView {
+                BirdsListView(presentedBirds: $presentedBirds).tabItem {
+                    Label("Birds", systemImage: "bird.circle.fill")
+                }
+            }
         }
     }
 }
