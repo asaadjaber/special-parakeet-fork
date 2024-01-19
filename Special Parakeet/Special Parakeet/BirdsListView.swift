@@ -10,18 +10,9 @@ import SwiftUI
 
 struct BirdsListView: View {
     @Binding var presentedBirds: [Bird]
+    let birds: [Bird]
     
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
-
-    var birds = [
-        Bird(name: "Accipiter", family: "Some"),
-        Bird(name: "Eagle", family: "Some"),
-        Bird(name: "Tree Sparrow", family: "Some"),
-        Bird(name: "Pigeon", family: "Some"),
-        Bird(name: "Crow", family: "Some"),
-        Bird(name: "BlueJay", family: "Some"),
-        Bird(name: "Woodpecker", family: "some")
-    ]
     
     var body: some View {
         LazyVGrid(columns: columns) {
@@ -38,5 +29,10 @@ struct BirdsListView: View {
 }
 
 #Preview {
-    BirdsListView(presentedBirds: Binding(projectedValue: .constant([])))
+    BirdsListView(presentedBirds: Binding(projectedValue: .constant([])), birds: [
+        Bird(name: "Sparrow", family: "Some"),
+        Bird(name: "Eagle", family: "Some"),
+        Bird(name: "Crow", family: "Some"),
+        Bird(name: "Blue Jay", family: "Some")
+    ])
 }

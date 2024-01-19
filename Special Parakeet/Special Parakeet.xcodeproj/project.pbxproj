@@ -11,6 +11,8 @@
 		4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */; };
 		4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFF2B31C74600BBAA42 /* Bird.swift */; };
 		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
+		4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */; };
+		4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */; };
 		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
 		4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE46552B516DA70003DC69 /* FavoritesStore.swift */; };
 		4EBFEDA12B557595005FE353 /* IsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFEDA02B557595005FE353 /* IsFavorited.swift */; };
@@ -51,6 +53,8 @@
 		4E2EDFFF2B31C74600BBAA42 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdFavoritesView.swift; sourceTree = "<group>"; };
+		4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListAndFavoritesTabView.swift; sourceTree = "<group>"; };
 		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EBE46552B516DA70003DC69 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		4EBFEDA02B557595005FE353 /* IsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavorited.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
 				4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */,
 				4EDB4A632B04E50C0041D060 /* ContentView.swift */,
+				4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */,
+				4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */,
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
 				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
 				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
@@ -363,9 +369,11 @@
 				4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */,
 				4EDB4A642B04E50C0041D060 /* ContentView.swift in Sources */,
 				4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */,
+				4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */,
 				4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */,
 				4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */,
 				4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */,
+				4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */,
 				4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */,
 				4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */,
 			);
