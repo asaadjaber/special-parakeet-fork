@@ -7,14 +7,16 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseFirestore
 
 @main
 struct Special_ParakeetApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+        
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.firebaseDatabase, Firestore.firestore())
         }
     }
 }
@@ -28,3 +30,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+private struct FirebaseDatabase: EnvironmentKey {
+    static var defaultValue: Firestore = Firestore.firestore()
+}
+
+extension EnvironmentValues {
+    var firebaseDatabase: Firestore {
+        get {
+            FirebaseDatabase.defaultValue.self
+        }
+        set(newFirestoreInstance) {
+            self[FirebaseDatabase.self] = newFirestoreInstance
+        }
+    }
+}

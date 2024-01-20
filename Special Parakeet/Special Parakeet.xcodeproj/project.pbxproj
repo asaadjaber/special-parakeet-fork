@@ -13,6 +13,7 @@
 		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
 		4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */; };
 		4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */; };
+		4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */; };
 		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
 		4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE46552B516DA70003DC69 /* FavoritesStore.swift */; };
 		4EBFEDA12B557595005FE353 /* IsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFEDA02B557595005FE353 /* IsFavorited.swift */; };
@@ -23,7 +24,6 @@
 		4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */; };
 		4EDB4A7D2B04E50D0041D060 /* Special_ParakeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7C2B04E50D0041D060 /* Special_ParakeetUITests.swift */; };
 		4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */; };
-		4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */; };
 		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
 		4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */; };
 		D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
@@ -55,6 +55,7 @@
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdFavoritesView.swift; sourceTree = "<group>"; };
 		4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListAndFavoritesTabView.swift; sourceTree = "<group>"; };
+		4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreUnitTests.swift; sourceTree = "<group>"; };
 		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EBE46552B516DA70003DC69 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		4EBFEDA02B557595005FE353 /* IsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavorited.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		4EDB4A782B04E50D0041D060 /* Special ParakeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Special ParakeetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDB4A7C2B04E50D0041D060 /* Special_ParakeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITests.swift; sourceTree = "<group>"; };
 		4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
 		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
 		4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BirdDetailViewUITests.swift; path = "Special ParakeetUITests/BirdDetailViewUITests.swift"; sourceTree = SOURCE_ROOT; };
 		6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Special_Parakeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +109,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4E6B7D922B5BA1630076C639 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		4EDB4A552B04E50C0041D060 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
-				4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */,
+				4E6B7D922B5BA1630076C639 /* App */,
 				4EDB4A632B04E50C0041D060 /* ContentView.swift */,
 				4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */,
 				4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */,
@@ -147,7 +155,6 @@
 				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
 				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
 				4EBE46552B516DA70003DC69 /* FavoritesStore.swift */,
-				4EDB4A8B2B04E8FC0041D060 /* HorizontalBarView.swift */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
 				4EDB4A672B04E50D0041D060 /* Preview Content */,
 			);
@@ -166,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */,
+				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
 			);
 			path = "Special ParakeetTests";
 			sourceTree = "<group>";
@@ -375,7 +383,6 @@
 				4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */,
 				4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */,
 				4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */,
-				4EDB4A8C2B04E8FC0041D060 /* HorizontalBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */,
+				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
