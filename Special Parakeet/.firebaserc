@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "special-parakeet"
+  },
+  "targets": {
+    "special-parakeet": {
+      "database": {
+        "main": [
+          "special-parakeet"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
