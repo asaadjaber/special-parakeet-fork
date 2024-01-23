@@ -1,7 +1,6 @@
 {
-  "firestore":
-      [
-        {"target": "main", "rules": "special-parakeet-firestore.rules"},
-        {"target": "main", "indexes": "special-parakeet-firestore.indexes.json"}
-      ]
+  "firestore": {
+    "rules": "special-parakeet-firestore.rules",
+    "app indexes": "special-parakeet-firestore.indexes.json"
+  }
 }
