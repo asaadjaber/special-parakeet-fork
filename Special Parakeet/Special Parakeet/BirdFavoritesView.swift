@@ -7,8 +7,11 @@
 
 import Foundation
 import SwiftUI
+import FirebaseFirestore
 
 struct BirdFavoritesView: View {
+    @StateObject var favoritesStore: FavoritesStore
+    
     let birds: [ Bird]
     
     var body: some View {
@@ -25,7 +28,7 @@ struct BirdFavoritesView: View {
 }
 
 #Preview {
-    BirdFavoritesView(birds: [
+    BirdFavoritesView(favoritesStore: FavoritesStore(), birds: [
         Bird(name: "Sparrow", family: "Some"),
         Bird(name: "Accipiter", family: "Some"),
         Bird(name: "Blue Jay", family: "Some")

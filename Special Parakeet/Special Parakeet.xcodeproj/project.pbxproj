@@ -153,8 +153,8 @@
 				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
 				4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */,
 				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
-				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
 				4EBE46552B516DA70003DC69 /* FavoritesStore.swift */,
+				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
 				4EDB4A672B04E50D0041D060 /* Preview Content */,
 			);

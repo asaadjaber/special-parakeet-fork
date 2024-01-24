@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import FirebaseFirestore
 
 struct BirdsListAndFavoritesTabView: View {
     @Binding var presentedBirds: [Bird]
@@ -17,14 +18,12 @@ struct BirdsListAndFavoritesTabView: View {
             BirdsListView(presentedBirds: $presentedBirds, birds: birds).tabItem {
                 Label("Birds", systemImage: "bird.circle.fill")
             }
-            BirdFavoritesView(birds: birds).tabItem {
+            BirdFavoritesView(favoritesStore: FavoritesStore(), birds: birds).tabItem {
                 Label("Favorited Birds", systemImage: "heart.circle.fill")
             }
         }
     }
 }
-
-
 
 #Preview {
     BirdsListAndFavoritesTabView(presentedBirds: Binding(projectedValue: .constant([])), birds: [
