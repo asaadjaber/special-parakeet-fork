@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Special_Parakeet
+import FirebaseFirestore
 
 final class FavoritesStoreUnitTests: XCTestCase {
 
@@ -15,6 +16,14 @@ final class FavoritesStoreUnitTests: XCTestCase {
     }
 
     func testMakeFavoriteMethod() {
-        
+        print("makeFavorite")
+    }
+    
+    func testGetFavoritesMethod() {
+        print("getFavorites")
+    }
+    
+    func testUnfavoriteMethod() {
+        print("unfavorite")
     }
 }
