@@ -11,19 +11,65 @@ import FirebaseFirestore
 
 final class FavoritesStoreUnitTests: XCTestCase {
 
+    var mockFavoritesStore: MockFavoritesStore!
+    var firebaseDatabase: Firestore!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockFavoritesStore = MockFavoritesStore(settings: FirestoreEmulatorSettings().settings)
+        firebaseDatabase = mockFavoritesStore.firebaseDatabase
     }
-
-    func testMakeFavoriteMethod() {
-        print("makeFavorite")
+    
+    func testMakeFavoriteMethod() async {
+        
+        let collectionPath = FirestoreCollection.isFavorited
+        let documentPath = "isFavorited/Sparrow"
+        let birdName = "Sparrow"
+        let isFavorited = true
+        let data: [String : Any] = [
+            "name": birdName,
+            "isFavorited": isFavorited
+        ]
+        
+        let IsFavoritedDocumentMaker = IsFavoritedDocumentMaker(firebaseDatabase: firebaseDatabase,
+                                                                  collectionPath: collectionPath,
+                                                                  birdName: birdName,
+                                                                  isFavorited: isFavorited,
+                                                                  data: data)
+        
+        await mockFavoritesStore.makeFavorite(IsFavoritedDocumentMaker)
+        
+        XCTAssertEqual(mockFavoritesStore.makeFavoriteCollectionPath, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentPath, documentPath)
+        XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentData as NSDictionary, data as NSDictionary)
+        XCTAssertEqual(mockFavoritesStore.makeFavoriteIsFavorited, isFavorited)
     }
     
     func testGetFavoritesMethod() {
         print("getFavorites")
     }
     
-    func testUnfavoriteMethod() {
-        print("unfavorite")
+    func testUnfavoriteMethod() async {
+        
+        let collectionPath = FirestoreCollection.isFavorited
+        let documentPath = "isFavorited/Sparrow"
+        let birdName = "Sparrow"
+        let isFavorited = false
+        let data: [String : Any] = [
+            "name": birdName,
+            "isFavorited": isFavorited
+        ]
+        
+        let IsFavoritedDocumentMaker = IsFavoritedDocumentMaker(firebaseDatabase: firebaseDatabase,
+                                                                  collectionPath: collectionPath,
+                                                                  birdName: birdName,
+                                                                  isFavorited: isFavorited,
+                                                                  data: data)
+        
+        await mockFavoritesStore.unFavorite(IsFavoritedDocumentMaker)
+        
+        XCTAssertEqual(mockFavoritesStore.unFavoriteCollectionPath, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentPath, documentPath)
+        XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentData as NSDictionary, data as NSDictionary)
+        XCTAssertEqual(mockFavoritesStore.unFavoritedIsFavorited, isFavorited)
     }
 }

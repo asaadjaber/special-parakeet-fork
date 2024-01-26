@@ -11,6 +11,8 @@
 		4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */; };
 		4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFF2B31C74600BBAA42 /* Bird.swift */; };
 		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
+		4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */; };
+		4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */; };
 		4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */; };
 		4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */; };
 		4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */; };
@@ -52,6 +54,8 @@
 		4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListView.swift; sourceTree = "<group>"; };
 		4E2EDFFF2B31C74600BBAA42 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesStore.swift; sourceTree = "<group>"; };
+		4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEmulatorSettings.swift; sourceTree = "<group>"; };
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdFavoritesView.swift; sourceTree = "<group>"; };
 		4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListAndFavoritesTabView.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 			children = (
 				4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */,
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
+				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
+				4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */,
 			);
 			path = "Special ParakeetTests";
 			sourceTree = "<group>";
@@ -391,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */,
+				4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */,
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
+				4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +623,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5QPQ583EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -634,6 +643,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5QPQ583EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -652,6 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5QPQ583EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animata.Special-ParakeetUITests";
@@ -669,6 +680,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5QPQ583EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animata.Special-ParakeetUITests";
