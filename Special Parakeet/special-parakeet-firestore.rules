@@ -3,9 +3,10 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /isFavorited/{bird} {
-      allow create: if ((request.resource.data.keys().hasAll(['name', 'isFavorited'])) 
+      allow create, update: if ((request.resource.data.keys().hasAll(['name', 'isFavorited'])) 
 			&& (request.resource.data.name is string) 
 			&& (request.resource.data.isFavorited is bool));
+      allow read: if true;
     }
   }
 }
