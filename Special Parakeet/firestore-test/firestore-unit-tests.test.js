@@ -5,7 +5,7 @@
   RulesTestEnvironment,
 } from "@firebase/rules-unit-testing"
 
-let testEnv = await initializeTestEnvironment({
+let testEnv = await initializeTestEnvironment, async; () => ({
   projectId: "special-parakeet",
   firestore: {
     rules: fs.readFileSync("special-parakeet-firestore.rules", "utf8"),
