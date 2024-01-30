@@ -21,7 +21,7 @@ final class FavoritesStoreUnitTests: XCTestCase {
     
     func testMakeFavoriteMethod() async {
         
-        let collectionPath = FirestoreCollection.isFavorited
+        let collectionPath = FavoritesStoreCollection.isFavorited
         let documentPath = "isFavorited/Sparrow"
         let birdName = "Sparrow"
         let isFavorited = true
@@ -44,13 +44,27 @@ final class FavoritesStoreUnitTests: XCTestCase {
         XCTAssertEqual(mockFavoritesStore.makeFavoriteIsFavorited, isFavorited)
     }
     
-    func testGetFavoritesMethod() {
-        print("getFavorites")
+    func testGetFavoritesMethod() async {
+        
+        let fieldName = "isFavorited"
+        let fieldQueryValue = false
+        let collectionPath = FavoritesStoreCollection.isFavorited
+        
+        let isFavoritedQueryMaker = IsFavoriteQueryMaker(firebaseDatabase: firebaseDatabase,
+                                                         fieldName: fieldName,
+                                                         collectionPath: collectionPath,
+                                                         queryFilterValue: fieldQueryValue)
+        
+        await mockFavoritesStore.getFavorites(isFavoritedQueryMaker)
+        
+        XCTAssertEqual(mockFavoritesStore.isFavoritedQueryFieldName, fieldName)
+        XCTAssertEqual(mockFavoritesStore.isFavoritedQueryCollectionPath, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.isFavoritedQueryFilterValue, fieldQueryValue)
     }
     
     func testUnfavoriteMethod() async {
         
-        let collectionPath = FirestoreCollection.isFavorited
+        let collectionPath = FavoritesStoreCollection.isFavorited
         let documentPath = "isFavorited/Sparrow"
         let birdName = "Sparrow"
         let isFavorited = false

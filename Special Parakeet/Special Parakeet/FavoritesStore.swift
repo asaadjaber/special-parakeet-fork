@@ -13,13 +13,8 @@ protocol FavoritesStoreProtocol {
     var firebaseDatabase: Firestore { get }
     var areFavorited: [IsFavorited] { get }
     func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async
-    func getFavorites() async
+    func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async
     func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async
-}
-
-struct BirdDocument: Decodable {
-    let name: String
-    let isFavorited: Bool
 }
 
 struct IsFavoritedDocumentMaker {
@@ -29,7 +24,7 @@ struct IsFavoritedDocumentMaker {
     let data: [String:Any]
     
     init(firebaseDatabase: Firestore,
-         collectionPath: FirestoreCollection,
+         collectionPath: FavoritesStoreCollection,
          birdName: String,
          isFavorited: Bool,
          data: [String:Any]) {
@@ -40,7 +35,25 @@ struct IsFavoritedDocumentMaker {
     }
 }
 
-enum FirestoreCollection: String {
+struct IsFavoriteQueryMaker {
+    let query: Query
+    let collectionPath: FavoritesStoreCollection
+    let fieldName: String
+    let queryFilterValue: Bool
+    
+    init(firebaseDatabase: Firestore, 
+         fieldName: String,
+         collectionPath: FavoritesStoreCollection,
+         queryFilterValue value: Bool) {
+        self.fieldName = fieldName
+        self.queryFilterValue = value
+        self.collectionPath = collectionPath
+        self.query = firebaseDatabase.collection(collectionPath.rawValue)
+                        .whereField(fieldName, isEqualTo: queryFilterValue)
+    }
+}
+
+enum FavoritesStoreCollection: String {
     case isFavorited
 }
 
@@ -65,16 +78,14 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
         }
     }
     
-    func getFavorites() async {
+    func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async {
         do {
             let isFavoritedSnapshot = try await firebaseDatabase.collection("isFavorited").whereField("isFavorited", isEqualTo: true).getDocuments()
             isFavoritedSnapshot.documents.forEach { snapshot in
                 do {
-                    let data = try snapshot.data(as: BirdDocument.self)
+                    let data = try snapshot.data(as: IsFavorited.self)
                     if data.isFavorited {
-                        areFavorited.append(IsFavorited(name: data.name, 
-                                                        family: "",
-                                                        isFavorited: data.isFavorited))
+                        areFavorited.append(data)
                     }
                 } catch {
                     print("Error decoding snapshot data.")

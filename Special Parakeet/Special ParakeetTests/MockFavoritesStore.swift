@@ -32,8 +32,14 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
         makeFavoriteIsFavorited = documentMaker.isFavorited
     }
     
-    func getFavorites() async {
-        //TODO: Implement getFavorites() mock method body.
+    var isFavoritedQueryFieldName: String = ""
+    var isFavoritedQueryCollectionPath: String = ""
+    var isFavoritedQueryFilterValue: Bool = true
+    
+    func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async {
+        self.isFavoritedQueryFieldName = queryMaker.fieldName
+        self.isFavoritedQueryCollectionPath = queryMaker.collectionPath.rawValue
+        self.isFavoritedQueryFilterValue = queryMaker.queryFilterValue
     }
     
     var unFavoriteCollectionPath: String = ""
