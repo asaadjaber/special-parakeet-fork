@@ -19,7 +19,7 @@ final class FavoritesStoreUnitTests: XCTestCase {
         firebaseDatabase = mockFavoritesStore.firebaseDatabase
     }
     
-    func testMakeFavoriteMethod() async {
+    func testMakeFavoriteMethod() async throws {
         
         let collectionPath = FavoritesStoreCollection.isFavorited
         let documentPath = "isFavorited/Sparrow"
@@ -35,16 +35,16 @@ final class FavoritesStoreUnitTests: XCTestCase {
                                                                   birdName: birdName,
                                                                   isFavorited: isFavorited,
                                                                   data: data)
-        
-        await mockFavoritesStore.makeFavorite(IsFavoritedDocumentMaker)
-        
+
+        try await mockFavoritesStore.makeFavorite(IsFavoritedDocumentMaker)
+
         XCTAssertEqual(mockFavoritesStore.makeFavoriteCollectionPath, collectionPath.rawValue)
         XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentPath, documentPath)
         XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentData as NSDictionary, data as NSDictionary)
         XCTAssertEqual(mockFavoritesStore.makeFavoriteIsFavorited, isFavorited)
     }
     
-    func testGetFavoritesMethod() async {
+    func testGetFavoritesMethod() async throws {
         
         let fieldName = "isFavorited"
         let fieldQueryValue = false
@@ -55,14 +55,14 @@ final class FavoritesStoreUnitTests: XCTestCase {
                                                          collectionPath: collectionPath,
                                                          queryFilterValue: fieldQueryValue)
         
-        await mockFavoritesStore.getFavorites(isFavoritedQueryMaker)
-        
+        try await mockFavoritesStore.getFavorites(isFavoritedQueryMaker)
+    
         XCTAssertEqual(mockFavoritesStore.isFavoritedQueryFieldName, fieldName)
         XCTAssertEqual(mockFavoritesStore.isFavoritedQueryCollectionPath, collectionPath.rawValue)
         XCTAssertEqual(mockFavoritesStore.isFavoritedQueryFilterValue, fieldQueryValue)
     }
     
-    func testUnfavoriteMethod() async {
+    func testUnfavoriteMethod() async throws {
         
         let collectionPath = FavoritesStoreCollection.isFavorited
         let documentPath = "isFavorited/Sparrow"
@@ -79,11 +79,26 @@ final class FavoritesStoreUnitTests: XCTestCase {
                                                                   isFavorited: isFavorited,
                                                                   data: data)
         
-        await mockFavoritesStore.unFavorite(IsFavoritedDocumentMaker)
+        try await mockFavoritesStore.unFavorite(IsFavoritedDocumentMaker)
         
         XCTAssertEqual(mockFavoritesStore.unFavoriteCollectionPath, collectionPath.rawValue)
         XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentPath, documentPath)
         XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentData as NSDictionary, data as NSDictionary)
         XCTAssertEqual(mockFavoritesStore.unFavoritedIsFavorited, isFavorited)
+    }
+    
+    func testMakeIsFavoritedDocumentSnapshot() async {
+        
+        let collectionPath = FavoritesStoreCollection.isFavorited
+        
+        let queryMaker = IsFavoriteQueryMaker(firebaseDatabase: firebaseDatabase,
+                                              fieldName: "fieldName",
+                                              collectionPath: collectionPath,
+                                              queryFilterValue: false)
+        
+        let isFavoritedDocumentSnapshot = await IsFavoritedSnapshot(fromQuery: queryMaker.query,
+                                                              collectionPath: queryMaker.collectionPath)
+        
+        XCTAssertEqual(isFavoritedDocumentSnapshot.collectionPath.rawValue, collectionPath.rawValue)
     }
 }

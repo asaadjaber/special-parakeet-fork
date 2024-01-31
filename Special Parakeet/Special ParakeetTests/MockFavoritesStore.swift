@@ -25,7 +25,7 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
     var makeFavoriteDocumentData: [String:Any] = [:]
     var makeFavoriteIsFavorited: Bool = false
     
-    func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async {
+    func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
         makeFavoriteCollectionPath = documentMaker.document.parent.path
         makeFavoriteDocumentPath = documentMaker.document.path
         makeFavoriteDocumentData = documentMaker.data
@@ -36,7 +36,7 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
     var isFavoritedQueryCollectionPath: String = ""
     var isFavoritedQueryFilterValue: Bool = true
     
-    func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async {
+    func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws {
         self.isFavoritedQueryFieldName = queryMaker.fieldName
         self.isFavoritedQueryCollectionPath = queryMaker.collectionPath.rawValue
         self.isFavoritedQueryFilterValue = queryMaker.queryFilterValue
@@ -47,7 +47,7 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
     var unFavoriteDocumentData: [String:Any] = [:]
     var unFavoritedIsFavorited: Bool = true
     
-    func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async {
+    func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
         unFavoriteCollectionPath = documentMaker.document.parent.path
         unFavoriteDocumentPath = documentMaker.document.path
         unFavoriteDocumentData = documentMaker.data
