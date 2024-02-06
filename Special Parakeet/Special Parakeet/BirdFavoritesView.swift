@@ -10,17 +10,15 @@ import SwiftUI
 import FirebaseFirestore
 
 struct BirdFavoritesView: View {
-    @StateObject var favoritesStore: FavoritesStore
-    
-    let birds: [ Bird]
+    @EnvironmentObject var favoritesStore: FavoritesStore
     
     var body: some View {
         List {
-            ForEach(birds) { bird in
+            ForEach(favoritesStore.areFavorited.indices, id: \.self) { index in
                 HStack {
                     Image(systemName: "bird")
                     Spacer()
-                    Text(bird.name)
+                    Text(favoritesStore.areFavorited[index].bird.name)
                 }
             }
         }.listStyle(.plain)
@@ -28,9 +26,9 @@ struct BirdFavoritesView: View {
 }
 
 #Preview {
-    BirdFavoritesView(favoritesStore: FavoritesStore(), birds: [
-        Bird(name: "Sparrow", family: "Some"),
-        Bird(name: "Accipiter", family: "Some"),
-        Bird(name: "Blue Jay", family: "Some")
-    ])
+    BirdFavoritesView().environmentObject(FavoritesStore(areFavorited: [
+        IsFavorited(name: "Magpie", family: "", isFavorited: true),
+        IsFavorited(name: "Pigeon", family: "", isFavorited: false),
+        IsFavorited(name: "Chicken", family: "", isFavorited: true)
+    ]))
 }

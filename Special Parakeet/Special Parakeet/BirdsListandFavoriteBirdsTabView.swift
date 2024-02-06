@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BirdsListandFavoriteBirdsTabView.swift
 //  Special Parakeet
 //
 //  Created by Asaad Jaber on 15/11/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct BirdsListandFavoriteBirdsTabView: View {
     @State private var presentedBirds: [Bird] = []
     
     var birds = [
@@ -22,11 +22,18 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $presentedBirds) {
-            BirdsListAndFavoritesTabView(presentedBirds: $presentedBirds, birds: birds)
+            TabView {
+                BirdsListView(presentedBirds: $presentedBirds).tabItem {
+                    Label("Birds", systemImage: "bird.circle.fill")
+                }
+                BirdFavoritesView().tabItem {
+                    Label("Favorite Birds", systemImage: "heart.circle.fill")
+                }
+            }
         }
     }
 }
 
 #Preview {
-    ContentView()
+    BirdsListandFavoriteBirdsTabView()
 }

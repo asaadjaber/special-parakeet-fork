@@ -10,7 +10,13 @@ import SwiftUI
 
 struct BirdsListView: View {
     @Binding var presentedBirds: [Bird]
-    let birds: [Bird]
+    
+    let birds: [Bird] = [
+        Bird(name: "Sparrow", family: "Some"),
+        Bird(name: "Eagle", family: "Some"),
+        Bird(name: "Crow", family: "Some"),
+        Bird(name: "Blue Jay", family: "Some")
+    ]
     
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
     
@@ -29,10 +35,5 @@ struct BirdsListView: View {
 }
 
 #Preview {
-    BirdsListView(presentedBirds: Binding(projectedValue: .constant([])), birds: [
-        Bird(name: "Sparrow", family: "Some"),
-        Bird(name: "Eagle", family: "Some"),
-        Bird(name: "Crow", family: "Some"),
-        Bird(name: "Blue Jay", family: "Some")
-    ])
+    BirdsListView(presentedBirds: Binding(projectedValue: .constant([])))
 }
