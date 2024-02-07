@@ -1,5 +1,5 @@
 //
-//  BirdFavoritesView.swift
+//  FavoriteBirdsView.swift
 //  Special Parakeet
 //
 //  Created by Asaad Jaber on 19/01/2024.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseFirestore
 
-struct BirdFavoritesView: View {
+struct FavoriteBirdsView: View {
     @EnvironmentObject var favoritesStore: FavoritesStore
     
     var body: some View {
@@ -26,7 +26,7 @@ struct BirdFavoritesView: View {
 }
 
 #Preview {
-    BirdFavoritesView().environmentObject(FavoritesStore(areFavorited: [
+    FavoriteBirdsView().environmentObject(FavoritesStore(areFavorited: [
         IsFavorited(name: "Magpie", family: "", isFavorited: true),
         IsFavorited(name: "Pigeon", family: "", isFavorited: false),
         IsFavorited(name: "Chicken", family: "", isFavorited: true)
