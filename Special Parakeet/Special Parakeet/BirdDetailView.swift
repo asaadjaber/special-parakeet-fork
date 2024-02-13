@@ -11,6 +11,12 @@ import SwiftUI
 struct BirdDetailView: View {
     @StateObject var isFavorited: IsFavorited
     
+    init(_ bird: Bird) {
+        _isFavorited = StateObject(wrappedValue: IsFavorited(name: bird.name,
+                                                             family: bird.family,
+                                                             isFavorited: false))
+    }
+    
     var body: some View {
         List {
             Section(content: {
@@ -35,5 +41,5 @@ struct BirdDetailView: View {
 }
 
 #Preview {
-    BirdDetailView(isFavorited: IsFavorited(name: "Sparrow", family: "Some", isFavorited: true))
+    BirdDetailView(Bird(name: "Sparrow", family: "Some"))
 }
