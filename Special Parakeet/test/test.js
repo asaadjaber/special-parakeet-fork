@@ -17,7 +17,6 @@ import {
   assertFails,
   assertSucceeds,
   initializeTestEnvironment,
-  RulesTestEnvironment,
 } from "@firebase/rules-unit-testing"
 
 let testEnv = await initializeTestEnvironment({
