@@ -13,6 +13,8 @@
 
 // const rulesTestEnvironment = require("@firebase/rules-unit-testing")
 
+import * as fs from 'fs';
+
 import {
   assertFails,
   assertSucceeds,
@@ -23,6 +25,8 @@ let testEnv = await initializeTestEnvironment({
   projectId: "special-parakeet",
   firestore: {
     rules: fs.readFileSync("special-parakeet-firestore.rules", "utf8"),
+    host: "127.0.0.1",
+    port: 8080,
   },
 });
 
