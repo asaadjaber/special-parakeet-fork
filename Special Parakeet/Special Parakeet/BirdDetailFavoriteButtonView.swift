@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+   
 struct BirdDetailFavoriteButtonView: View {
     @ObservedObject var isFavorited: IsFavorited
     
@@ -29,5 +29,5 @@ struct BirdDetailFavoriteButtonView: View {
 #Preview {
     BirdDetailFavoriteButtonView(isFavorited: IsFavorited(name: "Sparrow",
                                                           family: "Some",
-                                                          isFavorited: true))
+                                                          isFavorited: false))
 }

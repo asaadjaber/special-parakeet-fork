@@ -13,14 +13,13 @@
 		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
 		4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */; };
 		4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */; };
-		4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */; };
-		4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */; };
+		4E6B7D8F2B5AC73A0076C639 /* FavoriteBirdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */; };
 		4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */; };
 		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
 		4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE46552B516DA70003DC69 /* FavoritesStore.swift */; };
 		4EBFEDA12B557595005FE353 /* IsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFEDA02B557595005FE353 /* IsFavorited.swift */; };
 		4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */; };
-		4EDB4A642B04E50C0041D060 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A632B04E50C0041D060 /* ContentView.swift */; };
+		4EDB4A642B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */; };
 		4EDB4A662B04E50D0041D060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB4A652B04E50D0041D060 /* Assets.xcassets */; };
 		4EDB4A692B04E50D0041D060 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB4A682B04E50D0041D060 /* Preview Assets.xcassets */; };
 		4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */; };
@@ -57,15 +56,14 @@
 		4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesStore.swift; sourceTree = "<group>"; };
 		4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEmulatorSettings.swift; sourceTree = "<group>"; };
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
-		4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdFavoritesView.swift; sourceTree = "<group>"; };
-		4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListAndFavoritesTabView.swift; sourceTree = "<group>"; };
+		4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBirdsView.swift; sourceTree = "<group>"; };
 		4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreUnitTests.swift; sourceTree = "<group>"; };
 		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EBE46552B516DA70003DC69 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		4EBFEDA02B557595005FE353 /* IsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavorited.swift; sourceTree = "<group>"; };
 		4EDB4A5E2B04E50C0041D060 /* Special Parakeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Special Parakeet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetApp.swift; sourceTree = "<group>"; };
-		4EDB4A632B04E50C0041D060 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsListandFavoriteBirdsTabView.swift; sourceTree = "<group>"; };
 		4EDB4A652B04E50D0041D060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EDB4A682B04E50D0041D060 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4EDB4A6E2B04E50D0041D060 /* Special ParakeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Special ParakeetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E247A2E2B6A9A850099423F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4E63894FE4FDD1AEBC43053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +155,8 @@
 			children = (
 				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
 				4E6B7D922B5BA1630076C639 /* App */,
-				4EDB4A632B04E50C0041D060 /* ContentView.swift */,
-				4E6B7D902B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift */,
-				4E6B7D8E2B5AC73A0076C639 /* BirdFavoritesView.swift */,
+				4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */,
+				4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */,
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
 				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
 				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
@@ -179,7 +184,7 @@
 				4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */,
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
 				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
-				4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */,
+				4E247A2E2B6A9A850099423F /* Settings */,
 			);
 			path = "Special ParakeetTests";
 			sourceTree = "<group>";
@@ -381,13 +386,12 @@
 				4EBFEDA12B557595005FE353 /* IsFavorited.swift in Sources */,
 				4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */,
 				4EBE46562B516DA70003DC69 /* FavoritesStore.swift in Sources */,
-				4EDB4A642B04E50C0041D060 /* ContentView.swift in Sources */,
+				4EDB4A642B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift in Sources */,
 				4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */,
-				4E6B7D912B5AD5DC0076C639 /* BirdsListAndFavoritesTabView.swift in Sources */,
 				4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */,
 				4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */,
 				4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */,
-				4E6B7D8F2B5AC73A0076C639 /* BirdFavoritesView.swift in Sources */,
+				4E6B7D8F2B5AC73A0076C639 /* FavoriteBirdsView.swift in Sources */,
 				4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

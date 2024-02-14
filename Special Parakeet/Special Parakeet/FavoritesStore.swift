@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 protocol FavoritesStoreProtocol {
     var firebaseDatabase: Firestore { get }
-    var areFavorited: [IsFavorited] { get }
+    var areFavorited: [IsFavorited]! { get }
     func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws
     func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws
@@ -53,36 +53,23 @@ struct IsFavoriteQueryMaker {
     }
 }
 
-enum GetError: String {
-    case snapshotError = "Error getting snapshot."
-}
-
-enum SetError: String {
-    case setIsFavoriteTrue = "Error setting isFavorite to true."
-    case setIsFavoriteFalse = "Error settings isFavorite to false."
-}
-
 struct IsFavoritedSnapshot {
     let collectionPath: FavoritesStoreCollection
-    var areFavorited: [IsFavorited] = []
+    var isFavoritedDocuments: [QueryDocumentSnapshot] = []
     
     init(fromQuery query: Query, collectionPath: FavoritesStoreCollection) async {
         self.collectionPath = collectionPath
-        do {
-            try await getSnapshot(query: query)
-        } catch {
-            print(GetError.snapshotError.rawValue)
-        }
+        await getDocuments(query: query, collectionPath: collectionPath)
     }
 
-    private mutating func getSnapshot(query: Query) async throws {
-        var isFavorited: [IsFavorited] = []
-        let querySnapshot = try await query.getDocuments()
-        
-        let documents = querySnapshot.documents
-        isFavorited = try documents.map({ try $0.data(as: IsFavorited.self )})
-        
-        areFavorited = isFavorited
+    private mutating func getDocuments(query: Query, collectionPath: FavoritesStoreCollection) async {
+        do {
+            let querySnapshot = try await query.getDocuments()
+            let documents = querySnapshot.documents
+            isFavoritedDocuments = documents
+        } catch {
+            print("Unable to get snapshot for \(collectionPath.rawValue) collection: \(error.localizedDescription)")
+        }
     }
 }
 
@@ -91,19 +78,29 @@ enum FavoritesStoreCollection: String {
 }
 
 class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
-    @Published var areFavorited: [IsFavorited] = []
+    @Published var areFavorited: [IsFavorited]!
     
     @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
             
-    init(settings: FirestoreSettings? = nil) {
+    init(settings: FirestoreSettings? = nil,
+         areFavorited: [IsFavorited]? = nil) {
+        if areFavorited == nil {
+            self.areFavorited = []
+        } else {
+            self.areFavorited = areFavorited!
+        }
         if let settings = settings {
             self.firebaseDatabase.settings = settings
         }
     }
     
-    func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
+    func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async {
         if let document = documentMaker.document {
-            try await document.setData(documentMaker.data)
+            do {
+                try await document.setData(documentMaker.data)
+            } catch {
+                print("Unable to set data for \(documentMaker.birdName) document: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -111,12 +108,17 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
         let query = queryMaker.query
         let isFavoritedDocumentsSnapshot = await IsFavoritedSnapshot(fromQuery: query,
                                                                collectionPath: queryMaker.collectionPath)
-        areFavorited = isFavoritedDocumentsSnapshot.areFavorited
+        let documents = isFavoritedDocumentsSnapshot.isFavoritedDocuments
+        areFavorited = try documents.map({ try $0.data(as: IsFavorited.self )})
     }
     
-    func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
+    func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async {
         if let unFavoriteDocument = documentMaker.document {
-            try await unFavoriteDocument.setData(documentMaker.data)
+            do {
+                try await unFavoriteDocument.setData(documentMaker.data)
+            } catch {
+                print("Unable to set data for \(documentMaker.birdName) document: \(error.localizedDescription)")
+            }
         }
     }
 }

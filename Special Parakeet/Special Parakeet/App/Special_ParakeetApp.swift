@@ -12,11 +12,12 @@ import FirebaseFirestore
 @main
 struct Special_ParakeetApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-        
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BirdsListandFavoriteBirdsTabView()
                 .environment(\.firebaseDatabase, Firestore.firestore())
+                .environmentObject(FavoritesStore())
         }
     }
 }
@@ -44,3 +45,5 @@ extension EnvironmentValues {
         }
     }
 }
+
+extension Firestore: ObservableObject { }
