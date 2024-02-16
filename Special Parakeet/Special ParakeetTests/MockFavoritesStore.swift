@@ -13,11 +13,12 @@ import FirebaseFirestore
 final class MockFavoritesStore: FavoritesStoreProtocol {
     var firebaseDatabase: Firestore
         
-    var areFavorited: [Special_Parakeet.IsFavorited] = []
+    var areFavorited: [IsFavorited]!
     
     init(settings: FirestoreSettings) {
         self.firebaseDatabase = Firestore.firestore()
         self.firebaseDatabase.settings = settings
+        self.areFavorited = []
     }
     
     var makeFavoriteCollectionPath: String = ""
