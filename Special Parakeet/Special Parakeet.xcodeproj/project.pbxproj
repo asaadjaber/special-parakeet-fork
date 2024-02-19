@@ -12,7 +12,6 @@
 		4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EDFFF2B31C74600BBAA42 /* Bird.swift */; };
 		4E3AF8B22B56D70100CE8308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */; };
 		4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */; };
-		4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */; };
 		4E6B7D8F2B5AC73A0076C639 /* FavoriteBirdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */; };
 		4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */; };
 		4EBE46502B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */; };
@@ -54,7 +53,6 @@
 		4E2EDFFF2B31C74600BBAA42 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		4E3AF8B12B56D70100CE8308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesStore.swift; sourceTree = "<group>"; };
-		4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEmulatorSettings.swift; sourceTree = "<group>"; };
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBirdsView.swift; sourceTree = "<group>"; };
 		4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreUnitTests.swift; sourceTree = "<group>"; };
@@ -103,14 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E247A2E2B6A9A850099423F /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				4E651C122B63D383002682B1 /* FirestoreEmulatorSettings.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		4E63894FE4FDD1AEBC43053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +175,7 @@
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
 				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
 				4E247A2E2B6A9A850099423F /* Settings */,
+				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
 			);
 			path = "Special ParakeetTests";
 			sourceTree = "<group>";
@@ -404,6 +395,8 @@
 				4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */,
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
 				4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */,
+				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
+				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,10 @@ import SwiftUI
 import FirebaseFirestore
 
 final class MockFavoritesStore: FavoritesStoreProtocol {
-    var firebaseDatabase: Firestore
+    
+    @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
         
+<<<<<<< Updated upstream
     var areFavorited: [Special_Parakeet.IsFavorited] = []
     
     init(settings: FirestoreSettings) {
@@ -30,6 +32,20 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
         makeFavoriteDocumentPath = documentMaker.document.path
         makeFavoriteDocumentData = documentMaker.data
         makeFavoriteIsFavorited = documentMaker.isFavorited
+=======
+    var areFavorited: [IsFavorited]!
+        
+    var changeFavoriteBirdName: String = ""
+    var changeFavoriteCollectionPath: String = ""
+    var changeFavoriteDocumentData: [String:Any] = [:]
+    var changeFavoriteIsFavorited: Bool = false
+    
+    func changeFavorite(_ documentMaker: Special_Parakeet.IsFavoritedDocumentMaker) async throws {
+        self.changeFavoriteBirdName = documentMaker.birdName
+        self.changeFavoriteCollectionPath = documentMaker.collectionPath.rawValue
+        self.changeFavoriteDocumentData = documentMaker.data
+        self.changeFavoriteIsFavorited = documentMaker.isFavorited
+>>>>>>> Stashed changes
     }
     
     var isFavoritedQueryFieldName: String = ""
@@ -40,17 +56,5 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
         self.isFavoritedQueryFieldName = queryMaker.fieldName
         self.isFavoritedQueryCollectionPath = queryMaker.collectionPath.rawValue
         self.isFavoritedQueryFilterValue = queryMaker.queryFilterValue
-    }
-    
-    var unFavoriteCollectionPath: String = ""
-    var unFavoriteDocumentPath: String = ""
-    var unFavoriteDocumentData: [String:Any] = [:]
-    var unFavoritedIsFavorited: Bool = true
-    
-    func unFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
-        unFavoriteCollectionPath = documentMaker.document.parent.path
-        unFavoriteDocumentPath = documentMaker.document.path
-        unFavoriteDocumentData = documentMaker.data
-        unFavoritedIsFavorited = documentMaker.isFavorited
     }
 }

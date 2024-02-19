@@ -12,36 +12,27 @@ import FirebaseFirestore
 final class FavoritesStoreUnitTests: XCTestCase {
 
     var mockFavoritesStore: MockFavoritesStore!
-    var firebaseDatabase: Firestore!
     
     override func setUpWithError() throws {
-        mockFavoritesStore = MockFavoritesStore(settings: FirestoreEmulatorSettings().settings)
-        firebaseDatabase = mockFavoritesStore.firebaseDatabase
+        mockFavoritesStore = MockFavoritesStore()
     }
     
-    func testMakeFavoriteMethod() async throws {
+    func testMakeFavoriteChangeFavoriteMethod() async throws {
         
         let collectionPath = FavoritesStoreCollection.isFavorited
-        let documentPath = "isFavorited/Sparrow"
         let birdName = "Sparrow"
         let isFavorited = true
-        let data: [String : Any] = [
-            "name": birdName,
-            "isFavorited": isFavorited
-        ]
         
-        let IsFavoritedDocumentMaker = IsFavoritedDocumentMaker(firebaseDatabase: firebaseDatabase,
-                                                                  collectionPath: collectionPath,
+        let makeFavoriteDocumentMaker = IsFavoritedDocumentMaker(collectionPath: collectionPath,
                                                                   birdName: birdName,
-                                                                  isFavorited: isFavorited,
-                                                                  data: data)
+                                                                  isFavorited: isFavorited)
 
-        try await mockFavoritesStore.makeFavorite(IsFavoritedDocumentMaker)
+        try await mockFavoritesStore.changeFavorite(makeFavoriteDocumentMaker)
 
-        XCTAssertEqual(mockFavoritesStore.makeFavoriteCollectionPath, collectionPath.rawValue)
-        XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentPath, documentPath)
-        XCTAssertEqual(mockFavoritesStore.makeFavoriteDocumentData as NSDictionary, data as NSDictionary)
-        XCTAssertEqual(mockFavoritesStore.makeFavoriteIsFavorited, isFavorited)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteBirdName, birdName)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteCollectionPath, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteIsFavorited, isFavorited)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteDocumentData as NSDictionary, makeFavoriteDocumentMaker.data as NSDictionary)
     }
     
     func testGetFavoritesMethod() async throws {
@@ -50,8 +41,7 @@ final class FavoritesStoreUnitTests: XCTestCase {
         let fieldQueryValue = false
         let collectionPath = FavoritesStoreCollection.isFavorited
         
-        let isFavoritedQueryMaker = IsFavoriteQueryMaker(firebaseDatabase: firebaseDatabase,
-                                                         fieldName: fieldName,
+        let isFavoritedQueryMaker = IsFavoriteQueryMaker(fieldName: fieldName,
                                                          collectionPath: collectionPath,
                                                          queryFilterValue: fieldQueryValue)
         
@@ -62,10 +52,9 @@ final class FavoritesStoreUnitTests: XCTestCase {
         XCTAssertEqual(mockFavoritesStore.isFavoritedQueryFilterValue, fieldQueryValue)
     }
     
-    func testUnfavoriteMethod() async throws {
+    func testUnfavoriteChangeFavoriteMethod() async throws {
         
         let collectionPath = FavoritesStoreCollection.isFavorited
-        let documentPath = "isFavorited/Sparrow"
         let birdName = "Sparrow"
         let isFavorited = false
         let data: [String : Any] = [
@@ -73,32 +62,15 @@ final class FavoritesStoreUnitTests: XCTestCase {
             "isFavorited": isFavorited
         ]
         
-        let IsFavoritedDocumentMaker = IsFavoritedDocumentMaker(firebaseDatabase: firebaseDatabase,
-                                                                  collectionPath: collectionPath,
+        let unfavoriteDocumentMaker = IsFavoritedDocumentMaker(collectionPath: collectionPath,
                                                                   birdName: birdName,
-                                                                  isFavorited: isFavorited,
-                                                                  data: data)
+                                                                  isFavorited: isFavorited)
         
-        try await mockFavoritesStore.unFavorite(IsFavoritedDocumentMaker)
+        try await mockFavoritesStore.changeFavorite(unfavoriteDocumentMaker)
         
-        XCTAssertEqual(mockFavoritesStore.unFavoriteCollectionPath, collectionPath.rawValue)
-        XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentPath, documentPath)
-        XCTAssertEqual(mockFavoritesStore.unFavoriteDocumentData as NSDictionary, data as NSDictionary)
-        XCTAssertEqual(mockFavoritesStore.unFavoritedIsFavorited, isFavorited)
-    }
-    
-    func testMakeIsFavoritedDocumentSnapshot() async {
-        
-        let collectionPath = FavoritesStoreCollection.isFavorited
-        
-        let queryMaker = IsFavoriteQueryMaker(firebaseDatabase: firebaseDatabase,
-                                              fieldName: "fieldName",
-                                              collectionPath: collectionPath,
-                                              queryFilterValue: false)
-        
-        let isFavoritedDocumentSnapshot = await IsFavoritedSnapshot(fromQuery: queryMaker.query,
-                                                              collectionPath: queryMaker.collectionPath)
-        
-        XCTAssertEqual(isFavoritedDocumentSnapshot.collectionPath.rawValue, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteCollectionPath, collectionPath.rawValue)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteBirdName, birdName)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteDocumentData as NSDictionary, data as NSDictionary)
+        XCTAssertEqual(mockFavoritesStore.changeFavoriteIsFavorited, isFavorited)
     }
 }

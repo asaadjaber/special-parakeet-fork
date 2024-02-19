@@ -18,7 +18,7 @@ class IsFavorited: ObservableObject, Decodable  {
     var isFavorited: Bool = false {
         willSet {
             objectWillChange.send()
-            Task { await makeFavorite() }
+            Task { await makeFavorite(newValue) }
         }
     }
             
@@ -39,15 +39,10 @@ class IsFavorited: ObservableObject, Decodable  {
         self.bird = Bird(name: birdName, family: "")
     }
 
-    func makeFavorite() async {
-        await favoritesStore.makeFavorite(IsFavoritedDocumentMaker(firebaseDatabase: firebaseDatabase,
-                                                                          collectionPath: FavoritesStoreCollection.isFavorited,
-                                                                          birdName: bird.name,
-                                                                          isFavorited: isFavorited,
-                                                                          data: [
-                                                                            "name": bird.name,
-                                                                            "isFavorited": isFavorited
-                                                                          ]))
+    func makeFavorite(_ isFavorited: Bool) async {
+        await favoritesStore.changeFavorite(IsFavoritedDocumentMaker(collectionPath: FavoritesStoreCollection.isFavorited,
+                                                                     birdName: bird.name,
+                                                                     isFavorited: isFavorited))
     }
 }
 
