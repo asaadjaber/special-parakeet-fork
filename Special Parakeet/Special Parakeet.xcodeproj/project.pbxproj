@@ -174,8 +174,6 @@
 				4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */,
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
 				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
-				4E247A2E2B6A9A850099423F /* Settings */,
-				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
 			);
 			path = "Special ParakeetTests";
 			sourceTree = "<group>";
@@ -394,9 +392,6 @@
 				4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */,
 				4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */,
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
-				4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */,
-				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
-				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
