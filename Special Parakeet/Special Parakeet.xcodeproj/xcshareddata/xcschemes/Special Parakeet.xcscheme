@@ -28,30 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4EDB4A6D2B04E50D0041D060"
-               BuildableName = "Special ParakeetTests.xctest"
-               BlueprintName = "Special ParakeetTests"
-               ReferencedContainer = "container:Special Parakeet.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4EDB4A772B04E50D0041D060"
-               BuildableName = "Special ParakeetUITests.xctest"
-               BlueprintName = "Special ParakeetUITests"
-               ReferencedContainer = "container:Special Parakeet.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
