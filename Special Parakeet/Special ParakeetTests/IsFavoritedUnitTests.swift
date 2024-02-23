@@ -15,13 +15,17 @@ final class IsFavoritedUnitTests: XCTestCase {
     var mockIsFavorited: MockIsFavorited!
     
     override func setUpWithError() throws {
-        self.mockIsFavorited = MockIsFavorited(name: "Sparrow", family: "", isFavorited: false)
+        self.mockIsFavorited = MockIsFavorited(name: "Sparrow", 
+                                               family: "",
+                                               isFavorited: false)
     }
     
-    func testToggleFavoriteButtonCallsChangeFavorite() {
+    @MainActor
+    func testToggleFavoriteButtonCallsChangeFavorite() async {
         let isFavorited = true
-        self.mockIsFavorited.isFavorited = isFavorited
-        
+                            
+         mockIsFavorited.isFavorited = isFavorited
+                            
         XCTAssertEqual(mockIsFavorited.didCallMakeFavorite, true)
     }
 }
