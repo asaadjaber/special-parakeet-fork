@@ -26,6 +26,8 @@
 		4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */; };
 		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
 		4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */; };
+		4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */; };
+		4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */; };
 		D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
 		4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BirdDetailViewUITests.swift; path = "Special ParakeetUITests/BirdDetailViewUITests.swift"; sourceTree = SOURCE_ROOT; };
+		4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIsFavorited.swift; sourceTree = "<group>"; };
+		4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavoritedUnitTests.swift; sourceTree = "<group>"; };
 		6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Special_Parakeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59664EB062151D5966BB6CD /* Pods-Special Parakeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Special Parakeet.debug.xcconfig"; path = "Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +177,9 @@
 			children = (
 				4EDB4A722B04E50D0041D060 /* Special_ParakeetTests.swift */,
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
+				4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */,
 				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
+				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
 				4E247A2E2B6A9A850099423F /* Settings */,
 				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
 			);
@@ -394,6 +400,8 @@
 				4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */,
 				4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */,
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
+				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
+				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 				4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */,
 				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
 				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
@@ -554,6 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"Special Parakeet/Preview Content\"";
 				DEVELOPMENT_TEAM = X5QPQ583EG;
 				ENABLE_PREVIEWS = YES;
