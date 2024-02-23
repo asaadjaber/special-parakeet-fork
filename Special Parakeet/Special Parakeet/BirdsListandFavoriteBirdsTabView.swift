@@ -35,5 +35,11 @@ struct BirdsListandFavoriteBirdsTabView: View {
 }
 
 #Preview {
-    BirdsListandFavoriteBirdsTabView()
+    BirdsListandFavoriteBirdsTabView().environmentObject(FavoritesStore(areFavorited: [
+        IsFavorited(name: "Heron", family: "", isFavorited: true),
+        IsFavorited(name: "Lark", family: "", isFavorited: false),
+        IsFavorited(name: "Magpie", family: "", isFavorited: true),
+        IsFavorited(name: "Starling", family: "", isFavorited: true),
+        IsFavorited(name: "Kingfisher", family: "", isFavorited: true)
+    ]))
 }
