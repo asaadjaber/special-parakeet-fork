@@ -14,27 +14,8 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
     
     @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
         
-<<<<<<< Updated upstream
-    var areFavorited: [Special_Parakeet.IsFavorited] = []
-    
-    init(settings: FirestoreSettings) {
-        self.firebaseDatabase = Firestore.firestore()
-        self.firebaseDatabase.settings = settings
-    }
-    
-    var makeFavoriteCollectionPath: String = ""
-    var makeFavoriteDocumentPath: String = ""
-    var makeFavoriteDocumentData: [String:Any] = [:]
-    var makeFavoriteIsFavorited: Bool = false
-    
-    func makeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
-        makeFavoriteCollectionPath = documentMaker.document.parent.path
-        makeFavoriteDocumentPath = documentMaker.document.path
-        makeFavoriteDocumentData = documentMaker.data
-        makeFavoriteIsFavorited = documentMaker.isFavorited
-=======
-    var areFavorited: [IsFavorited]!
-        
+    var areFavorited: [IsFavorited] = []
+            
     var changeFavoriteBirdName: String = ""
     var changeFavoriteCollectionPath: String = ""
     var changeFavoriteDocumentData: [String:Any] = [:]
@@ -45,7 +26,6 @@ final class MockFavoritesStore: FavoritesStoreProtocol {
         self.changeFavoriteCollectionPath = documentMaker.collectionPath.rawValue
         self.changeFavoriteDocumentData = documentMaker.data
         self.changeFavoriteIsFavorited = documentMaker.isFavorited
->>>>>>> Stashed changes
     }
     
     var isFavoritedQueryFieldName: String = ""

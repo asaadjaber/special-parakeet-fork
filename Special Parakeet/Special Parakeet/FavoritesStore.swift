@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 protocol FavoritesStoreProtocol {
     var firebaseDatabase: Firestore { get }
-    var areFavorited: [IsFavorited]! { get }
+    var areFavorited: [IsFavorited] { get }
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws
     func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws
 }
@@ -53,7 +53,7 @@ enum FavoritesStoreCollection: String {
 }
 
 class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
-    @Published var areFavorited: [IsFavorited]!
+    @Published var areFavorited: [IsFavorited]
     
     @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
             
