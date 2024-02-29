@@ -35,11 +35,11 @@ struct BirdsListandFavoriteBirdsTabView: View {
 }
 
 #Preview {
-    BirdsListandFavoriteBirdsTabView().environmentObject(FavoritesStore(areFavorited: [
-        IsFavorited(name: "Heron", family: "", isFavorited: true),
-        IsFavorited(name: "Lark", family: "", isFavorited: false),
-        IsFavorited(name: "Magpie", family: "", isFavorited: true),
-        IsFavorited(name: "Starling", family: "", isFavorited: true),
-        IsFavorited(name: "Kingfisher", family: "", isFavorited: true)
+    BirdsListandFavoriteBirdsTabView().environmentObject(FavoritesStore(firebaseDatabase: nil, areFavorited: [
+        IsFavorited(name: "Heron", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Lark", family: "", isFavorited: false, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Magpie", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Starling", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Kingfisher", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil))
     ]))
 }

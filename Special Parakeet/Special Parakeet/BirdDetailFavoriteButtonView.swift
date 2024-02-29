@@ -29,5 +29,5 @@ struct BirdDetailFavoriteButtonView: View {
 #Preview {
     BirdDetailFavoriteButtonView(isFavorited: IsFavorited(name: "Sparrow",
                                                           family: "Some",
-                                                          isFavorited: false))
+                                                          isFavorited: false, favoritesStore: FavoritesStore(firebaseDatabase: nil)))
 }

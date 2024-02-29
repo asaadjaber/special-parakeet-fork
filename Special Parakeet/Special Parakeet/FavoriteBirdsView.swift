@@ -26,9 +26,9 @@ struct FavoriteBirdsView: View {
 }
 
 #Preview {
-    FavoriteBirdsView().environmentObject(FavoritesStore(areFavorited: [
-        IsFavorited(name: "Magpie", family: "", isFavorited: true),
-        IsFavorited(name: "Pigeon", family: "", isFavorited: false),
-        IsFavorited(name: "Chicken", family: "", isFavorited: true)
+    FavoriteBirdsView().environmentObject(FavoritesStore(firebaseDatabase: Firestore.firestore(), areFavorited: [
+        IsFavorited(name: "Magpie", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Pigeon", family: "", isFavorited: false, favoritesStore: FavoritesStore(firebaseDatabase: nil)),
+        IsFavorited(name: "Chicken", family: "", isFavorited: true, favoritesStore: FavoritesStore(firebaseDatabase: nil))
     ]))
 }

@@ -12,12 +12,11 @@ import FirebaseFirestore
 @main
 struct Special_ParakeetApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+            
     var body: some Scene {
         WindowGroup {
             BirdsListandFavoriteBirdsTabView()
-                .environment(\.firebaseDatabase, Firestore.firestore())
-                .environmentObject(FavoritesStore())
+                .environmentObject(FavoritesStore(firebaseDatabase: Firestore.firestore()))
         }
     }
 }
@@ -30,20 +29,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     return true
   }
 }
-
-private struct FirebaseDatabase: EnvironmentKey {
-    static var defaultValue: Firestore = Firestore.firestore()
-}
-
-extension EnvironmentValues {
-    var firebaseDatabase: Firestore {
-        get {
-            FirebaseDatabase.defaultValue.self
-        }
-        set(newFirestoreInstance) {
-            self[FirebaseDatabase.self] = newFirestoreInstance
-        }
-    }
-}
-
-extension Firestore: ObservableObject { }

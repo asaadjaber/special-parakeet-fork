@@ -12,8 +12,7 @@ import FirebaseFirestore
 
 class IsFavorited: ObservableObject, Decodable  {
     var bird: Bird
-    @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
-    @EnvironmentObject var favoritesStore: FavoritesStore
+    var favoritesStore: FavoritesStore?
         
     var isFavorited: Bool = false {
         willSet {
@@ -27,9 +26,13 @@ class IsFavorited: ObservableObject, Decodable  {
         case isFavorited
     }
     
-    init(name: String, family: String, isFavorited: Bool) {
+    init(name: String, 
+         family: String,
+         isFavorited: Bool,
+         favoritesStore: FavoritesStore?) {
         self.bird = Bird(name: name, family: family)
         self.isFavorited = isFavorited
+        self.favoritesStore = favoritesStore
     }
     
     required init(from decoder: Decoder) throws {
@@ -39,10 +42,15 @@ class IsFavorited: ObservableObject, Decodable  {
         self.bird = Bird(name: birdName, family: "")
     }
 
+    @MainActor
     func makeFavorite(_ isFavorited: Bool) async {
-        await favoritesStore.changeFavorite(IsFavoritedDocumentMaker(collectionPath: FavoritesStoreCollection.isFavorited,
-                                                                     birdName: bird.name,
-                                                                     isFavorited: isFavorited))
+        do {
+            try await favoritesStore?.changeFavorite(IsFavoritedDocumentMaker(collectionPath: FavoritesStoreCollection.isFavorited,
+                                                                                 birdName: bird.name,
+                                                                                 isFavorited: isFavorited))
+        } catch {
+            print("Unable to set data for \(bird.name) document: \(error.localizedDescription)")
+        }
     }
 }
 
