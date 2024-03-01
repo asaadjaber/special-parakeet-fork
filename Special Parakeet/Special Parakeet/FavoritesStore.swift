@@ -53,7 +53,7 @@ enum FavoritesStoreCollection: String {
 }
 
 enum QuerySnapshotError: Error {
-    case querySnapshotError
+    case queryIsNilError
 }
 
 enum FirebaseChangeFavoriteError: Error {
@@ -78,14 +78,19 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws {
         let query = firebaseDatabase?.collection(queryMaker.collectionPath.rawValue)
                         .whereField(queryMaker.fieldName, isEqualTo: queryMaker.queryFilterValue)
-        
-        do {
-            let querySnapshot = try await query?.getDocuments()
-            guard let documents = querySnapshot?.documents else { throw  QuerySnapshotError.querySnapshotError }
-            areFavorited = try documents.map({ try $0.data(as: IsFavorited.self )}) as! [IsFavorited]
-        } catch {
-            print("Unable to get snapshot for \(queryMaker.collectionPath.rawValue) collection: \(error.localizedDescription)")
+        guard let query = query else { throw QuerySnapshotError.queryIsNilError }
+        let querySnapshot = try await query.getDocuments()
+        let documentSnapshots = querySnapshot.documents
+        var areFavorited: [IsFavorited] = []
+        for documentSnapshot in documentSnapshots {
+            do {
+                let isFavorited = try documentSnapshot.data(as: IsFavorited.self)
+                areFavorited.append(isFavorited)
+            } catch {
+                print("error decoding data from document: \(error.localizedDescription)")
+            }
         }
+        self.areFavorited = areFavorited
     }
     
     func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
