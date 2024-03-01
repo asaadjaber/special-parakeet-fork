@@ -57,7 +57,7 @@ enum QuerySnapshotError: Error {
 }
 
 enum FirebaseChangeFavoriteError: Error {
-    case documentError
+    case documentIsNilError
 }
 
 class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
@@ -94,11 +94,7 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
     }
     
     func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
-        guard let document = firebaseDatabase?.collection(documentMaker.collectionPath.rawValue).document(documentMaker.birdName) else { throw FirebaseChangeFavoriteError.documentError }
-        do {
-            try await document.setData(documentMaker.data)
-        } catch {
-            throw error
-        }
+        guard let document = firebaseDatabase?.collection(documentMaker.collectionPath.rawValue).document(documentMaker.birdName) else { throw FirebaseChangeFavoriteError.documentIsNilError }
+        try await document.setData(documentMaker.data)
     }
 }
