@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BirdsListView: View {
     @Binding var presentedBirds: [Bird]
+    @EnvironmentObject var favoritesStore: FavoritesStore
     
     let birds: [Bird] = [
         Bird(name: "Sparrow", family: "Some"),
@@ -27,7 +28,7 @@ struct BirdsListView: View {
             }
         }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
         .navigationDestination(for: Bird.self) { bird in
-            BirdDetailView(bird)
+            BirdDetailView(bird: bird, favoritesStore: favoritesStore)
         }
     }
 }

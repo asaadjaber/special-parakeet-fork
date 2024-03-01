@@ -10,7 +10,7 @@ import SwiftUI
 import FirebaseFirestore
 
 protocol FavoritesStoreProtocol {
-    var firebaseDatabase: Firestore { get }
+    var firebaseDatabase: Firestore? { get }
     var areFavorited: [IsFavorited] { get }
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws
     func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws
@@ -52,42 +52,49 @@ enum FavoritesStoreCollection: String {
     case isFavorited
 }
 
+enum QuerySnapshotError: Error {
+    case queryIsNilError
+}
+
+enum FirebaseChangeFavoriteError: Error {
+    case documentIsNilError
+}
+
 class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
     @Published var areFavorited: [IsFavorited]
     
-    @Environment(\.firebaseDatabase) var firebaseDatabase: Firestore
+    var firebaseDatabase: Firestore?
             
-    init(settings: FirestoreSettings? = nil,
+    init(firebaseDatabase: Firestore?,
          areFavorited: [IsFavorited]? = nil) {
         if areFavorited == nil {
             self.areFavorited = []
         } else {
             self.areFavorited = areFavorited!
         }
-        if let settings = settings {
-            self.firebaseDatabase.settings = settings
-        }
+        self.firebaseDatabase = firebaseDatabase
     }
         
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws {
-        let query = firebaseDatabase.collection(queryMaker.collectionPath.rawValue)
+        let query = firebaseDatabase?.collection(queryMaker.collectionPath.rawValue)
                         .whereField(queryMaker.fieldName, isEqualTo: queryMaker.queryFilterValue)
-        
-        do {
-            let querySnapshot = try await query.getDocuments()
-            let documents = querySnapshot.documents
-            areFavorited = try documents.map({ try $0.data(as: IsFavorited.self )})
-        } catch {
-            print("Unable to get snapshot for \(queryMaker.collectionPath.rawValue) collection: \(error.localizedDescription)")
+        guard let query = query else { throw QuerySnapshotError.queryIsNilError }
+        let querySnapshot = try await query.getDocuments()
+        let documentSnapshots = querySnapshot.documents
+        var areFavorited: [IsFavorited] = []
+        for documentSnapshot in documentSnapshots {
+            do {
+                let isFavorited = try documentSnapshot.data(as: IsFavorited.self)
+                areFavorited.append(isFavorited)
+            } catch {
+                print("error decoding data from document: \(error.localizedDescription)")
+            }
         }
+        self.areFavorited = areFavorited
     }
     
-    func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async {
-        let document = firebaseDatabase.collection(documentMaker.collectionPath.rawValue).document(documentMaker.birdName)
-        do {
-            try await document.setData(documentMaker.data)
-        } catch {
-            print("Unable to set data for \(documentMaker.birdName) document: \(error.localizedDescription)")
-        }
+    func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
+        guard let document = firebaseDatabase?.collection(documentMaker.collectionPath.rawValue).document(documentMaker.birdName) else { throw FirebaseChangeFavoriteError.documentIsNilError }
+        try await document.setData(documentMaker.data)
     }
 }

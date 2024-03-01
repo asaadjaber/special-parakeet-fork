@@ -11,10 +11,12 @@ import SwiftUI
 struct BirdDetailView: View {
     @StateObject var isFavorited: IsFavorited
     
-    init(_ bird: Bird) {
+    init(bird: Bird,
+         favoritesStore: FavoritesStore?) {
         _isFavorited = StateObject(wrappedValue: IsFavorited(name: bird.name,
                                                              family: bird.family,
-                                                             isFavorited: false))
+                                                             isFavorited: false,
+                                                             favoritesStore: favoritesStore))
     }
     
     var body: some View {
@@ -41,5 +43,6 @@ struct BirdDetailView: View {
 }
 
 #Preview {
-    BirdDetailView(Bird(name: "Sparrow", family: "Some"))
+    BirdDetailView(bird: Bird(name: "Sparrow", family: "Some"),
+                   favoritesStore: FavoritesStore(firebaseDatabase: nil))
 }
