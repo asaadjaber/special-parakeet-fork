@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BirdsListandFavoriteBirdsTabView: View {
-    @State private var presentedBirds: [Bird] = []
     
     var birds = [
         Bird(name: "Accipiter", family: "Some"),
@@ -21,14 +20,12 @@ struct BirdsListandFavoriteBirdsTabView: View {
     ]
     
     var body: some View {
-        NavigationStack(path: $presentedBirds) {
-            TabView {
-                BirdsListView(presentedBirds: $presentedBirds).tabItem {
-                    Label("Birds", systemImage: "bird.circle.fill")
-                }
-                FavoriteBirdsView().tabItem {
-                    Label("Favorite Birds", systemImage: "heart.circle.fill")
-                }
+        TabView {
+            BirdsListView().tabItem {
+                Label("Birds", systemImage: "bird.circle.fill")
+            }
+            FavoriteBirdsView().tabItem {
+                Label("Favorite Birds", systemImage: "heart.circle.fill")
             }
         }
     }

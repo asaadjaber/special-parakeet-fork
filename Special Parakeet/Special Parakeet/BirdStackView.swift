@@ -11,6 +11,7 @@ import SwiftUI
 struct BirdStackView: View {
     var bird: Bird
     @Binding var presentedBirds: [Bird]
+    @EnvironmentObject var favoritesStore: FavoritesStore
     
     var body: some View {
         VStack(alignment: .center) {
@@ -41,5 +42,5 @@ struct BirdStackView: View {
 
 #Preview {
     BirdStackView(bird: Bird(name: "Sparrow", family: "Some"),
-                  presentedBirds: Binding(projectedValue: .constant([])))
+                  presentedBirds: Binding(projectedValue: .constant([]))).environmentObject(FavoritesStore(firebaseDatabase: nil, areFavorited: nil))
 }
