@@ -12,10 +12,11 @@ struct BirdDetailView: View {
     @StateObject var isFavorited: IsFavorited
     
     init(bird: Bird,
+         isFavorited: Bool,
          favoritesStore: FavoritesStore?) {
         _isFavorited = StateObject(wrappedValue: IsFavorited(name: bird.name,
                                                              family: bird.family,
-                                                             isFavorited: false,
+                                                             isFavorited: isFavorited,
                                                              favoritesStore: favoritesStore))
     }
     
@@ -43,6 +44,6 @@ struct BirdDetailView: View {
 }
 
 #Preview {
-    BirdDetailView(bird: Bird(name: "Sparrow", family: "Some"),
+    BirdDetailView(bird: Bird(name: "Sparrow", family: "Some"), isFavorited: false,
                    favoritesStore: FavoritesStore(firebaseDatabase: nil))
 }

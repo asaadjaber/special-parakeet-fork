@@ -29,7 +29,7 @@ struct BirdsListView: View {
                 }
             }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
             .navigationDestination(for: Bird.self) { bird in
-                BirdDetailView(bird: bird, favoritesStore: favoritesStore)
+                BirdDetailView(bird: bird, isFavorited: favoritesStore.findIsFavorited(bird.name), favoritesStore: favoritesStore)
             }
         }
     }

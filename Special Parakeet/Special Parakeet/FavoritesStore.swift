@@ -74,6 +74,15 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
         }
         self.firebaseDatabase = firebaseDatabase
     }
+    
+    func findIsFavorited(_ birdName: String) -> Bool {
+        let isFavoritedFiltered = areFavorited.filter { ($0.bird.name == birdName) }
+        if let isFavorited = isFavoritedFiltered.first {
+            return isFavorited.isFavorited
+        } else {
+            return false
+        }
+    }
         
     func getFavorites(_ queryMaker: IsFavoriteQueryMaker) async throws {
         let query = firebaseDatabase?.collection(queryMaker.collectionPath.rawValue)
@@ -96,5 +105,22 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
     func changeFavorite(_ documentMaker: IsFavoritedDocumentMaker) async throws {
         guard let document = firebaseDatabase?.collection(documentMaker.collectionPath.rawValue).document(documentMaker.birdName) else { throw FirebaseChangeFavoriteError.documentIsNilError }
         try await document.setData(documentMaker.data)
+    }
+    
+    func setIsFavorited(birdName: String, family: String, isFavorited: Bool, favoritesStore: FavoritesStore) {
+        let index = areFavorited.firstIndex(where: { $0.bird.name == birdName })
+        if let index = index {
+            let newIsFavorited = IsFavorited(name: birdName,
+                                             family: family,
+                                             isFavorited: isFavorited,
+                                             favoritesStore: favoritesStore)
+            areFavorited[index] = newIsFavorited
+        } else {
+            let isFavorited = IsFavorited(name: birdName,
+                                          family: family,
+                                          isFavorited: isFavorited,
+                                          favoritesStore: favoritesStore)
+            areFavorited.append(isFavorited)
+        }
     }
 }

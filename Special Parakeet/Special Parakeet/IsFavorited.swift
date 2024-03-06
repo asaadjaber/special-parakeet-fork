@@ -17,6 +17,7 @@ class IsFavorited: ObservableObject, Decodable  {
     var isFavorited: Bool = false {
         willSet {
             objectWillChange.send()
+            updateFavoritesStore(newValue)
             Task { await makeFavorite(newValue) }
         }
     }
@@ -50,6 +51,15 @@ class IsFavorited: ObservableObject, Decodable  {
                                                                                  isFavorited: isFavorited))
         } catch {
             print("Unable to set data for \(bird.name) document: \(error.localizedDescription)")
+        }
+    }
+    
+    func updateFavoritesStore(_ isFavorited: Bool) {
+        if let favoritesStore = favoritesStore {
+            favoritesStore.setIsFavorited(birdName: bird.name,
+                                           family: bird.family,
+                                           isFavorited: isFavorited,
+                                           favoritesStore: favoritesStore)
         }
     }
 }
