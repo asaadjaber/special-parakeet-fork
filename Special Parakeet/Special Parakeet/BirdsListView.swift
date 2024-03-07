@@ -22,13 +22,15 @@ struct BirdsListView: View {
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
-            ForEach(birds) { bird in
-                BirdStackView(bird: bird, presentedBirds: $presentedBirds)
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach(birds) { bird in
+                    BirdStackView(bird: bird, presentedBirds: $presentedBirds)
+                }
+            }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
+            .navigationDestination(for: Bird.self) { bird in
+                BirdDetailView(bird: bird, isFavorited: favoritesStore.findIsFavorited(bird.name), favoritesStore: favoritesStore)
             }
-        }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
-        .navigationDestination(for: Bird.self) { bird in
-            BirdDetailView(bird: bird, isFavorited: favoritesStore.findIsFavorited(bird.name), favoritesStore: favoritesStore)
         }
     }
 }
