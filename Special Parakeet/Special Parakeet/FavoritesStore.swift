@@ -123,4 +123,8 @@ class FavoritesStore: ObservableObject, FavoritesStoreProtocol {
             areFavorited.append(isFavorited)
         }
     }
+    
+    func filterAreFavorited() -> [IsFavorited] {
+        return areFavorited.filter({ $0.isFavorited == true })
+    }
 }

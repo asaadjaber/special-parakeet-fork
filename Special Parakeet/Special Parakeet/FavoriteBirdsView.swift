@@ -14,11 +14,11 @@ struct FavoriteBirdsView: View {
     
     var body: some View {
         List {
-            ForEach(favoritesStore.areFavorited.indices, id: \.self) { index in
+            ForEach(favoritesStore.filterAreFavorited()) { isFavorited in
                 HStack {
                     Image(systemName: "bird")
                     Spacer()
-                    Text(favoritesStore.areFavorited[index].bird.name)
+                    Text(isFavorited.bird.name)
                 }
             }
         }.listStyle(.plain)
