@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct BirdsListView: View {
-    @State private var presentedBirds: [Bird] = []
+    @Binding var presentedBirds: [Bird]
     @EnvironmentObject var favoritesStore: FavoritesStore
     
     let birds: [Bird] = [
@@ -22,19 +22,17 @@ struct BirdsListView: View {
     let columns = [GridItem(.adaptive(minimum: 70, maximum: 100))]
     
     var body: some View {
-        NavigationStack(path: $presentedBirds) {
-            LazyVGrid(columns: columns) {
-                ForEach(birds) { bird in
-                    BirdStackView(bird: bird, presentedBirds: $presentedBirds)
-                }
-            }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
-            .navigationDestination(for: Bird.self) { bird in
-                BirdDetailView(bird: bird, isFavorited: favoritesStore.findIsFavorited(bird.name), favoritesStore: favoritesStore)
+        LazyVGrid(columns: columns) {
+            ForEach(birds) { bird in
+                BirdStackView(bird: bird, presentedBirds: $presentedBirds)
             }
+        }.padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
+        .navigationDestination(for: Bird.self) { bird in
+            BirdDetailView(bird: bird, isFavorited: favoritesStore.findIsFavorited(bird.name), favoritesStore: favoritesStore)
         }
     }
 }
 
 #Preview {
-    BirdsListView().environmentObject(FavoritesStore(firebaseDatabase: nil))
+    BirdsListView(presentedBirds: Binding(projectedValue: .constant([Bird(name: "Sparrow", family: "some")]) )).environmentObject(FavoritesStore(firebaseDatabase: nil))
 }

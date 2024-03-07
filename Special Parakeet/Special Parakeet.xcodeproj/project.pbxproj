@@ -150,8 +150,8 @@
 				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
 				4E6B7D922B5BA1630076C639 /* App */,
 				4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */,
-				4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */,
 				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
+				4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */,
 				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
 				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
 				4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */,
@@ -179,8 +179,6 @@
 				4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */,
 				4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */,
 				4E651C102B63CB3E002682B1 /* MockFavoritesStore.swift */,
-				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
-				4E247A2E2B6A9A850099423F /* Settings */,
 				4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */,
 			);
 			path = "Special ParakeetTests";
@@ -402,7 +400,6 @@
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
 				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
 				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
-				4E651C132B63D383002682B1 /* FirestoreEmulatorSettings.swift in Sources */,
 				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
 				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 			);
