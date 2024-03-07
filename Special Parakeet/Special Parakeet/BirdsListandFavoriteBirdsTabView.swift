@@ -16,7 +16,7 @@ struct BirdsListandFavoriteBirdsTabView: View {
                 BirdsListView(presentedBirds: $presentedBirds).tabItem {
                     Label("Birds", systemImage: "bird.circle.fill")
                 }
-                FavoriteBirdsView().tabItem {
+                FavoriteBirdsView(presentedBirds: $presentedBirds).tabItem {
                     Label("Favorite Birds", systemImage: "heart.circle.fill")
                 }
             }
