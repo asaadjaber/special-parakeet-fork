@@ -26,6 +26,7 @@
 		4EDB4A7F2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */; };
 		4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D802B3C507200E60F00 /* BirdDetailView.swift */; };
 		4EE31D832B3ED9C200E60F00 /* BirdDetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */; };
+		4EE7296D2BD2777400725EBF /* BirdsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7296C2BD2777400725EBF /* BirdsAPI.swift */; };
 		4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */; };
 		4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */; };
 		D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
@@ -73,6 +74,7 @@
 		4EDB4A7E2B04E50D0041D060 /* Special_ParakeetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Special_ParakeetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4EE31D802B3C507200E60F00 /* BirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailView.swift; sourceTree = "<group>"; };
 		4EE31D822B3ED9C200E60F00 /* BirdDetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BirdDetailViewUITests.swift; path = "Special ParakeetUITests/BirdDetailViewUITests.swift"; sourceTree = SOURCE_ROOT; };
+		4EE7296C2BD2777400725EBF /* BirdsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsAPI.swift; sourceTree = "<group>"; };
 		4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIsFavorited.swift; sourceTree = "<group>"; };
 		4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavoritedUnitTests.swift; sourceTree = "<group>"; };
 		6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Special_Parakeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E43D9FE2BDFB551003925DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4EE7296C2BD2777400725EBF /* BirdsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4E63894FE4FDD1AEBC43053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
 				4EBE46552B516DA70003DC69 /* FavoritesStore.swift */,
 				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
+				4E43D9FE2BDFB551003925DA /* API */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
 				4EDB4A672B04E50D0041D060 /* Preview Content */,
 			);
@@ -385,6 +396,7 @@
 				4E2EE0002B31C74600BBAA42 /* Bird.swift in Sources */,
 				4E2B5A0E2B35DF4300BA083B /* BirdStackView.swift in Sources */,
 				4E2EDFFE2B31B01400BBAA42 /* BirdsListView.swift in Sources */,
+				4EE7296D2BD2777400725EBF /* BirdsAPI.swift in Sources */,
 				4EE31D812B3C507200E60F00 /* BirdDetailView.swift in Sources */,
 				4E6B7D8F2B5AC73A0076C639 /* FavoriteBirdsView.swift in Sources */,
 				4EDB4A622B04E50C0041D060 /* Special_ParakeetApp.swift in Sources */,
