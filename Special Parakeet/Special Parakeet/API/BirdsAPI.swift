@@ -50,20 +50,19 @@ class BirdsAPI: ObservableObject {
     
     @Published var birdResults: [BirdResult] = []
     
-    func fetchObservations() {
-        URLSession.shared.dataTask(with: URLRequest(url: BirdsAPI.url!)) { data, response, error in
-            guard error == nil else { return }
-            
+    @MainActor
+    func fetchObservations() async {
+        do {
+            let (data, _) = try await URLSession.shared.data(for: URLRequest(url: BirdsAPI.url!))
             let decoder = JSONDecoder()
-            
             do {
-                let body = try decoder.decode(Body.self, from: data!)
-                DispatchQueue.main.async {
-                    self.birdResults = body.results
-                }
-            } catch let error {
-                print("error decoding data, \(error)")
+                let body = try decoder.decode(Body.self, from: data)
+                self.birdResults = body.results
+            } catch {
+                print("error decoding data,", error)
             }
-        }.resume()
+        } catch {
+            print("error fetching data,", error)
+        }
     }
 }
