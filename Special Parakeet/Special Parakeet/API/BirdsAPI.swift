@@ -61,7 +61,6 @@ class BirdsAPI: ObservableObject {
                 DispatchQueue.main.async {
                     self.birdResults = body.results
                 }
-                print(body)
             } catch let error {
                 print("error decoding data, \(error)")
             }

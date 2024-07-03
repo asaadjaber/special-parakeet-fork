@@ -29,7 +29,7 @@
 		4EE7296D2BD2777400725EBF /* BirdsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7296C2BD2777400725EBF /* BirdsAPI.swift */; };
 		4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACB2B7FA77F00123543 /* MockIsFavorited.swift */; };
 		4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA0ACD2B7FA79800123543 /* IsFavoritedUnitTests.swift */; };
-		D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
+		808CE39AB2ECEAE169D23783 /* Pods_Special_Parakeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4EB5C6412C3462DD00906DBF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		01BB93D602086E776B2EE8BD /* Pods-Special Parakeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Special Parakeet.release.xcconfig"; path = "Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet.release.xcconfig"; sourceTree = "<group>"; };
 		4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdStackView.swift; sourceTree = "<group>"; };
@@ -59,6 +72,10 @@
 		4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Special-Parakeet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBirdsView.swift; sourceTree = "<group>"; };
 		4E6B7D932B5BC17F0076C639 /* FavoritesStoreUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreUnitTests.swift; sourceTree = "<group>"; };
+		4E84D1432C22DE4A00FB490A /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E84D1472C22DE6300FB490A /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB5C63A2C34620A00906DBF /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB5C63E2C3462DD00906DBF /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDetailFavoriteButtonView.swift; sourceTree = "<group>"; };
 		4EBE46552B516DA70003DC69 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		4EBFEDA02B557595005FE353 /* IsFavorited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavorited.swift; sourceTree = "<group>"; };
@@ -86,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C1E2D7F7B8A7CB7CDE5253 /* Pods_Special_Parakeet.framework in Frameworks */,
+				808CE39AB2ECEAE169D23783 /* Pods_Special_Parakeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +135,10 @@
 		4E63894FE4FDD1AEBC43053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EB5C63E2C3462DD00906DBF /* FirebaseFirestore.framework */,
+				4EB5C63A2C34620A00906DBF /* FirebaseFirestore.framework */,
+				4E84D1472C22DE6300FB490A /* FirebaseFirestore.framework */,
+				4E84D1432C22DE4A00FB490A /* FirebaseCore.framework */,
 				6014F77C6C15B839FD4FD94D /* Pods_Special_Parakeet.framework */,
 			);
 			name = Frameworks;
@@ -129,6 +150,36 @@
 				4EDB4A612B04E50C0041D060 /* Special_ParakeetApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4EB5C6422C34648D00906DBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */,
+				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
+				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
+				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
+				4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */,
+				4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4EB5C6432C34649E00906DBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
+				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4EB5C6442C3464A900906DBF /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4EBE46552B516DA70003DC69 /* FavoritesStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		4EDB4A552B04E50C0041D060 = {
@@ -159,15 +210,9 @@
 			children = (
 				4E6B7D8D2B59A0230076C639 /* Special-Parakeet-Info.plist */,
 				4E6B7D922B5BA1630076C639 /* App */,
-				4EDB4A632B04E50C0041D060 /* BirdsListandFavoriteBirdsTabView.swift */,
-				4E2EDFFD2B31B01400BBAA42 /* BirdsListView.swift */,
-				4E6B7D8E2B5AC73A0076C639 /* FavoriteBirdsView.swift */,
-				4E2B5A0D2B35DF4300BA083B /* BirdStackView.swift */,
-				4EE31D802B3C507200E60F00 /* BirdDetailView.swift */,
-				4EBE464F2B4EBED60003DC69 /* BirdDetailFavoriteButtonView.swift */,
-				4E2EDFFF2B31C74600BBAA42 /* Bird.swift */,
-				4EBE46552B516DA70003DC69 /* FavoritesStore.swift */,
-				4EBFEDA02B557595005FE353 /* IsFavorited.swift */,
+				4EB5C6422C34648D00906DBF /* View */,
+				4EB5C6432C34649E00906DBF /* Model */,
+				4EB5C6442C3464A900906DBF /* Store */,
 				4E43D9FE2BDFB551003925DA /* API */,
 				4EDB4A652B04E50D0041D060 /* Assets.xcassets */,
 				4EDB4A672B04E50D0041D060 /* Preview Content */,
@@ -225,7 +270,8 @@
 				4EDB4A5A2B04E50C0041D060 /* Sources */,
 				4EDB4A5B2B04E50C0041D060 /* Frameworks */,
 				4EDB4A5C2B04E50C0041D060 /* Resources */,
-				17A5EC25C3C71E9B19A8115D /* [CP] Embed Pods Frameworks */,
+				B25190EDF70802C2F3EE762C /* [CP] Embed Pods Frameworks */,
+				4EB5C6412C3462DD00906DBF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,7 +326,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					4EDB4A5D2B04E50C0041D060 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -343,23 +389,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17A5EC25C3C71E9B19A8115D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A43BE79CAE8CC680DFF87283 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +409,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B25190EDF70802C2F3EE762C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Special Parakeet/Pods-Special Parakeet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -410,8 +456,6 @@
 				4EDB4A732B04E50D0041D060 /* Special_ParakeetTests.swift in Sources */,
 				4E651C112B63CB3E002682B1 /* MockFavoritesStore.swift in Sources */,
 				4E6B7D942B5BC17F0076C639 /* FavoritesStoreUnitTests.swift in Sources */,
-				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
-				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 				4EFA0ACC2B7FA77F00123543 /* MockIsFavorited.swift in Sources */,
 				4EFA0ACE2B7FA79800123543 /* IsFavoritedUnitTests.swift in Sources */,
 			);
@@ -584,6 +628,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +636,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animata.Special-Parakeet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -618,6 +668,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +676,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animata.Special-Parakeet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,7 +690,6 @@
 		4EDB4A862B04E50D0041D060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -654,7 +709,6 @@
 		4EDB4A872B04E50D0041D060 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -674,7 +728,6 @@
 		4EDB4A892B04E50D0041D060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X5QPQ583EG;
@@ -692,7 +745,6 @@
 		4EDB4A8A2B04E50D0041D060 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X5QPQ583EG;
